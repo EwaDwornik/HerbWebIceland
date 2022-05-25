@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Navigation from "./components/Navigation";
 import HerbsByName from "./components/HerbsByName";
 import HerbName from "./components/HerbName";
+import HerbsBySymptom from "./components/HerbsBySymptom";
 ReactDOM.render(
     <Router>
         <Navigation/>
@@ -14,8 +15,7 @@ ReactDOM.render(
             <Route path="/" element={<Home/>}/>
             <Route path="/name" element={<HerbsByName/>}/>
             <Route path="/herb/:id" element={<HerbName/>}/>
-
-
+            <Route path="/symptom" element={<HerbsBySymptom/>}/>
         </Routes>
     </Router>,
 

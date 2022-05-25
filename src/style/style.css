@@ -1,32 +1,62 @@
+/* overall changes */
 body {
     font-family: 'Poppins', sans-serif;
     font-family: 'Questrial', sans-serif;
+    margin-right: 70px;
     margin-top: 90px;
-    background-color: #EFF7E2;
+    background-color: rgba(248,249,250);
 }
 
-a:link {
+p {
+    text-align: justify;
+    color: #466803;
+}
+
+a:link, .nav-link {
     text-decoration: none;
-    color: #3A3B3C;
+    color: #466803 !important;
 }
 
-a:hover {
-    color: black;
+a:link:hover, .nav-link:hover {
+    text-decoration: none;
+    color: #56682c !important;
 }
 
-a:active {
-    color: black;
+.sidenav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(248,249,250);
+    overflow-x: hidden;
+    padding-top: 200px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.wider-grid {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    margin-left: 400px;
+}
+
+/* Navigation */
+
+.navbar-custom .navbar-brand {
+    padding: 10px;
+    color: #466803 !important;
+    font-size: 25px;
 }
 
 .navbar-custom {
-    padding: 10px;
-    background-color: #EFF7E2 ;
-
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 1px solid;
 }
 
-.navbar-middle {
-    margin: 5px;
-}
+/* Home */
 
 div.background {
     background: url(/src/components/static/redhouse.jpeg) center;
@@ -61,77 +91,66 @@ div.transbox p {
     height: 80%;
 }
 
+/* HerbsByName */
+
 .card-names-custom {
-    width: 250px;
-    height: 320px;
+    width: 200px;
+    height: 270px;
     align-items: center;
     margin: 20px;
 }
 
 .card-names-custom img {
-    height: 200px;
+    height: 150px;
     object-fit: scale-down;
     display: block;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .card-footer {
-    width: 250px;
-}
-
-div.description-select {
-    margin: 0 -80px;
-    height: 300px;
-    margin-top: 170px;
-    margin-bottom: 50px;
-    position: relative;
-}
-
-div.herbs-by-name-description-box {
-    background-color: #dde5b6;
-    border-radius: 50% / 100%;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-    float: right;
-}
-
-div.herbs-by-name-description-box p {
-    padding-top: 80px;
-    padding-left: 130px;
-    padding-right: 50px;
+    width: 200px;
 }
 
 .form-select {
-    width: 30%;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-left: 90px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 40%;
 }
 
-.sidenav {
-    height: 100%;
-    width: 250px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgba(248,249,250);
-    overflow-x: hidden;
-    padding-top: 160px;
-}
+/* HerbName */
 
-.sidenav img{
+.HerbNameNames p {
+    text-align: center;
+}
+.HerbNameNames img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
     width: 80%;
 }
-.HerbNameNames {
-    color: #3A3B3C;
+
+.medical-uses-box {
+    width: 100%;
+    float: right;
+    padding: 100px;
+    border-radius: 90px;
+    background-color: #dee7b1 ;
     text-align: center;
+    color: #466803;
+    margin-bottom: 50px;
 }
+
+.vegetation {
+    color: #466803;
+    text-align: justify;
+}
+
+.vegetation img {
+    width: 130%;
+    margin-right: 30px;
+}
+
