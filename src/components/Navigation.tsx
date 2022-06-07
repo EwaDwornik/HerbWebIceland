@@ -6,11 +6,9 @@ function Navigation() {
             <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light navbar-custom">
                 <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                     <ul className="navbar-nav mr-auto">
+
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="/">Home</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="/name">Herbs by name</a>
+                            <a className="nav-link" href="/">Herbs by name</a>
                         </li>
                         <li className="nav-item d-flex">
                             <a className="nav-link" href="/symptom">Herbs by symptom</a>
@@ -33,7 +31,7 @@ function Navigation() {
                             <a className="nav-link" href="/articles">Articles</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/workshops">Workshops</a>
+                            <a className="nav-link" href="/workshop">Workshops</a>
                         </li>
                     </ul>
                 </div>

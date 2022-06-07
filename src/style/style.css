@@ -4,22 +4,23 @@ body {
     font-family: 'Questrial', sans-serif;
     margin-right: 70px;
     margin-top: 90px;
-    background-color: rgba(248,249,250);
-}
-
-p {
+    background-color: #ffffff;
     text-align: justify;
     color: #466803;
 }
 
-a:link, .nav-link {
+.card {
+    text-align: center;
+}
+
+a:link, .nav-link, li {
     text-decoration: none;
     color: #466803 !important;
 }
 
-a:link:hover, .nav-link:hover {
+a:link:hover, .nav-link:hover, li:hover {
     text-decoration: none;
-    color: #56682c !important;
+    color: #0F3325 !important;
 }
 
 .sidenav {
@@ -28,7 +29,6 @@ a:link:hover, .nav-link:hover {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: rgba(248,249,250);
     overflow-x: hidden;
     padding-top: 200px;
     padding-left: 30px;
@@ -45,7 +45,6 @@ a:link:hover, .nav-link:hover {
 
 .navbar-custom .navbar-brand {
     padding: 10px;
-    color: #466803 !important;
     font-size: 25px;
 }
 
@@ -54,41 +53,7 @@ a:link:hover, .nav-link:hover {
     padding-left: 10px;
     padding-right: 10px;
     border-bottom: 1px solid;
-}
-
-/* Home */
-
-div.background {
-    background: url(/src/components/static/redhouse.jpeg) center;
-    width: 100%;
-    padding-top: 320px;
-    padding-right: 300px;
-    padding-left: 300px;
-}
-
-div.transbox {
-    background-color: #ffffff;
-    opacity: 0.5;
-}
-
-div.transbox p {
-    margin: 5%;
-    color: #000000;
-    padding: 50px;
-}
-
-.card-home-custom {
-    width: 250px;
-    height: 250px;
-    align-items: center;
-    opacity: 0.6;
-    margin: 50px;
-    margin-top: 50px;
-}
-
-.background img {
-    width: 80%;
-    height: 80%;
+    background-color: #ffffff !important;
 }
 
 /* HerbsByName */
@@ -110,14 +75,16 @@ div.transbox p {
 
 .card-footer {
     width: 200px;
+    background-color: #d4e09b;
 }
 
-.form-select {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    width: 40%;
+.searching {
+    padding: 20px;
+}
+
+.searching-child {
+    width: 100%;
+    float: left;
 }
 
 /* HerbName */
@@ -125,6 +92,7 @@ div.transbox p {
 .HerbNameNames p {
     text-align: center;
 }
+
 .HerbNameNames img {
     display: block;
     margin-left: auto;
@@ -138,15 +106,9 @@ div.transbox p {
     float: right;
     padding: 100px;
     border-radius: 90px;
-    background-color: #dee7b1 ;
+    background-color: #d4e09b ;
     text-align: center;
-    color: #466803;
     margin-bottom: 50px;
-}
-
-.vegetation {
-    color: #466803;
-    text-align: justify;
 }
 
 .vegetation img {
@@ -154,3 +116,20 @@ div.transbox p {
     margin-right: 30px;
 }
 
+/* HerbsBySymptom */
+
+.symptom-card {
+    width: 260px;
+    margin: 20px;
+    padding: 0px;
+}
+
+.symptom-card li {
+    border: none;
+}
+
+.symptom-header {
+    background-color: #d4e09b;
+}
+
+/* Workshops */

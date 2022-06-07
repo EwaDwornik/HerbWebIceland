@@ -1,9 +1,10 @@
 import React from 'react';
 
 import '../style/style.css';
-import {useParams} from 'react-router-dom';
+import {Link, NavLink, useParams} from 'react-router-dom';
 import {herbsDB} from "../services/herbs";
 import {Language} from "../model";
+import {deleteSpace} from "../services/utilities";
 
 
 const HerbName = () => {
@@ -35,8 +36,10 @@ const HerbName = () => {
                                     <ul className="list-unstyled">
                                         <h3>Medical uses</h3><br/>
                                         {herb.medicalUses.map((use: string) => (
-                                            <li><h5>{use}</h5></li>)
+                                            <NavLink to={"/symptom#" + deleteSpace(use)}>
+                                                <li><h5>{use}</h5></li></NavLink>)
                                         )}
+
                                     </ul>
                                 </div>
                                 <div className="col-4">
@@ -51,7 +54,7 @@ const HerbName = () => {
                         </div>
                         <div className="vegetation">
                             <div className="row justify-content-evenly">
-                                <h3>Vegatation information</h3><br />
+                                <h3>Vegetation information</h3><br />
                                 <div className="col-4">{herb.vegetation}</div>
                                 <div className="col-4"><img src={herb.vegetationPhoto} alt={herb.names.english}/></div>
                             </div>
@@ -64,8 +67,9 @@ const HerbName = () => {
 
         )
     } else {
-        return <h4>Herb with this id doesn;t exist in the data base yet.</h4>
+        return <h4>Herb with this id doesn't exist in the data base yet.</h4>
     }
 }
 export default HerbName;
+
 

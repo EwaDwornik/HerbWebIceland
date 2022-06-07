@@ -20,7 +20,8 @@ export interface Herb {
 export interface Workshop {
     id: number;
     title: string;
-    photo: string;
+    date: string,
+    imageWorkshop: string;
     email: string;
     description?: string;
     event?: string;
