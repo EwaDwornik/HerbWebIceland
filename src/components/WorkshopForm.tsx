@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import {workshopDB} from "../services/workshops";
 import {generateIdWorkshop} from "../services/utilities";
-import {Herb, Workshop} from "../model";
+import {Workshop} from "../model";
 
 
 const initialState: Workshop = {

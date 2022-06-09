@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 import '../style/style.css';
 import {Herb, Language} from "../model";
-import {herbsDB} from "../services/herbs";
+import {getAllHerbs} from "../services/herbs";
 
 function sortByLanguage(herbs: Herb[], lang: Language): Herb[] {
     return [...herbs].sort((a: Herb, b: Herb) => (a.names[lang] > b.names[lang]) ? 1 : -1)
@@ -11,7 +11,7 @@ function sortByLanguage(herbs: Herb[], lang: Language): Herb[] {
 
 function HerbsByName() {
     const defaultLanguage = Language.english
-    const [herbs, setHerbs] = useState(sortByLanguage(herbsDB, defaultLanguage));
+    const [herbs, setHerbs] = useState(sortByLanguage(getAllHerbs(), defaultLanguage));
     const [sortedBy, setSortedBy] = useState(defaultLanguage);
 
     function sortStateBy(lang: Language) {

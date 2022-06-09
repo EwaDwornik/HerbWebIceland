@@ -1,27 +1,24 @@
-import React from 'react';
+import React, {useEffect} from "react";
+import {useParams} from "react-router-dom";
+import {NavHashLink} from "react-router-hash-link";
+
 
 import '../style/style.css';
-import {Link, NavLink, useParams} from 'react-router-dom';
-import {herbsDB} from "../services/herbs";
 import {Language} from "../model";
 import {deleteSpace} from "../services/utilities";
-
+import {getAllHerbs} from "../services/herbs";
 
 const HerbName = () => {
     const {id} = useParams();
-    const herb = herbsDB.find((h: { id: number }) => h.id === Number(id));
+    const herb = getAllHerbs().find((h: { id: number }) => h.id === Number(id));
     const values = Object.values(Language);
-    let herbPrecautions;
-    let herbUses;
-
 
     if (herb) {
         return (
             <div className='container'>
-
                 <div className="row ">
                     <div className="col-6 col-md-3 sidenav">
-                        <div className="HerbNameNames">
+                        <div className="text-center">
                             <img src={herb.imageHerb} alt={herb.names[Language.english]}/>
                             {values.map((lang: Language) => (
                                 <p>{herb.names[lang]}</p>
@@ -33,17 +30,27 @@ const HerbName = () => {
                         <div className="medical-uses-box">
                             <div className="row justify-content-evenly">
                                 <div className="col-4">
-                                    <ul className="list-unstyled">
+                                    <ul className="list-unstyled text-center">
                                         <h3>Medical uses</h3><br/>
                                         {herb.medicalUses.map((use: string) => (
-                                            <NavLink to={"/symptom#" + deleteSpace(use)}>
-                                                <li><h5>{use}</h5></li></NavLink>)
-                                        )}
+                                            <NavHashLink
+                                                style={{
+                                                    background: 'red',
+                                                    color: 'white',
+                                                }}
+                                               /* activeStyle={{
+                                                    color: 'red'
+                                                }}*/
 
+                                                to={"/symptom#" + deleteSpace(use)}
+                                            >
+                                                <li><h5>{use}</h5></li>
+                                            </NavHashLink>)
+                                        )}
                                     </ul>
                                 </div>
                                 <div className="col-4">
-                                    <ul className="list-unstyled">
+                                    <ul className="list-unstyled text-center">
                                         <h3>Precautions</h3><br/>
                                         {herb.precautions.map((precaution: string) => (
                                             <li><h5>{precaution}</h5></li>)
@@ -54,7 +61,7 @@ const HerbName = () => {
                         </div>
                         <div className="vegetation">
                             <div className="row justify-content-evenly">
-                                <h3>Vegetation information</h3><br />
+                                <h3>Vegetation information</h3><br/>
                                 <div className="col-4">{herb.vegetation}</div>
                                 <div className="col-4"><img src={herb.vegetationPhoto} alt={herb.names.english}/></div>
                             </div>

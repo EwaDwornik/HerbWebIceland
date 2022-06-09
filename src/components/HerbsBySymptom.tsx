@@ -4,7 +4,7 @@ import {Language} from "../model";
 import {Link} from 'react-router-dom';
 
 
-import {herbsDB} from "../services/herbs";
+import {getAllHerbs} from "../services/herbs";
 import {allMedicalUsesList} from "../services/herbs";
 import {deleteSpace} from "../services/utilities";
 
@@ -13,10 +13,10 @@ function HerbsBySymptom() {
     const symptomsCard: any[] = [];
 
     for (let use of allMedicalUsesList) {
-        let herbsWithSymptom = herbsDB.filter(herb => (herb.medicalUses).includes(use))
+        let herbsWithSymptom = getAllHerbs().filter(herb => (herb.medicalUses).includes(use))
 
         symptomsCard.push(
-            <div className="card symptom-card" >
+            <div className="card symptom-card text-center">
                 <div className="card-header symptom-header" id={deleteSpace(use)}>
                     <h5>{use}</h5>
                 </div>
@@ -51,7 +51,9 @@ function HerbsBySymptom() {
             </div>
         </div>
     )
-}export default HerbsBySymptom;
+}
+
+export default HerbsBySymptom;
 
 
 

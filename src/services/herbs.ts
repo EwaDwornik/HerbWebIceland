@@ -89,3 +89,9 @@ export const allMedicalUsesList = flatUsesList.filter(
     (element, i) => i === flatUsesList.indexOf(element)
 );
 
+export function getAllHerbs(): Herb[] {
+    return herbsDB.map((obj) => {
+        const result: Herb = {...(obj)};
+        return result
+    })
+}

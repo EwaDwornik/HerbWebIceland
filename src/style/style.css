@@ -3,24 +3,32 @@ body {
     font-family: 'Poppins', sans-serif;
     font-family: 'Questrial', sans-serif;
     margin-right: 70px;
-    margin-top: 90px;
     background-color: #ffffff;
     text-align: justify;
     color: #466803;
 }
 
-.card {
-    text-align: center;
-}
 
-a:link, .nav-link, li {
+a:link, .nav-link, link {
     text-decoration: none;
     color: #466803 !important;
 }
 
-a:link:hover, .nav-link:hover, li:hover {
+a:link:hover, .nav-link:hover, link:hover {
     text-decoration: none;
     color: #0F3325 !important;
+}
+
+.btn {
+    background-color: #ffffff;
+    border-color: #466803;
+    color: #0F3325;
+}
+
+.btn:hover, .button:hover {
+    background-color: #466803;
+    color: #ffffff !important;
+    border-color: #466803;
 }
 
 .sidenav {
@@ -35,10 +43,19 @@ a:link:hover, .nav-link:hover, li:hover {
     padding-right: 30px;
 }
 
+.sidenav img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 80%;
+}
+
 .wider-grid {
-    margin-top: 100px;
+    margin-top: 200px;
     margin-bottom: 50px;
     margin-left: 400px;
+    align-items: center;
 }
 
 /* Navigation */
@@ -46,6 +63,7 @@ a:link:hover, .nav-link:hover, li:hover {
 .navbar-custom .navbar-brand {
     padding: 10px;
     font-size: 25px;
+    color: #466803;
 }
 
 .navbar-custom {
@@ -87,19 +105,9 @@ a:link:hover, .nav-link:hover, li:hover {
     float: left;
 }
 
+
 /* HerbName */
 
-.HerbNameNames p {
-    text-align: center;
-}
-
-.HerbNameNames img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    width: 80%;
-}
 
 .medical-uses-box {
     width: 100%;
@@ -107,7 +115,6 @@ a:link:hover, .nav-link:hover, li:hover {
     padding: 100px;
     border-radius: 90px;
     background-color: #d4e09b ;
-    text-align: center;
     margin-bottom: 50px;
 }
 
@@ -133,3 +140,36 @@ a:link:hover, .nav-link:hover, li:hover {
 }
 
 /* Workshops */
+
+.workshop-card {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.workshop-card img {
+    height: 280px;
+}
+
+.add-workshop {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.workshops {
+    margin-bottom: 30px;
+}
+
+/* Contact */
+
+.background {
+    background-color: #d4e09b ;
+    border-radius: 90px;
+    padding: 50px;
+    color: #0F3325;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
