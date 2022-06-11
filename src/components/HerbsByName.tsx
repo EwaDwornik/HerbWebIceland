@@ -24,18 +24,14 @@ function HerbsByName() {
         setSearchTerm(event.target.value);
     };
 
-    useEffect(() => {
-        const results = herbs.filter(herb =>
-            (herb.names[Language.latin]).toLowerCase().includes(searchTerm) ||
-            (herb.names[Language.english]).toLowerCase().includes(searchTerm) ||
-            (herb.names[Language.icelandic]).toLowerCase().includes(searchTerm)
-        );
-        setHerbs(results);
-    }, [searchTerm]);
-
+    const results = herbs.filter(herb =>
+        (herb.names[Language.latin]).toLowerCase().includes(searchTerm) ||
+        (herb.names[Language.english]).toLowerCase().includes(searchTerm) ||
+        (herb.names[Language.icelandic]).toLowerCase().includes(searchTerm)
+    );
 
     const herbCards: any[] = [];
-    for (let herb of herbs) {
+    for (let herb of results) {
 
         herbCards.push(
             <div className="col">
