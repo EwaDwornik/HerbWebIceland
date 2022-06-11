@@ -1,39 +1,49 @@
 import React from 'react';
 import '../style/style.css';
 import {Language} from "../model";
-import {Link} from 'react-router-dom';
+import {NavLink, useLocation} from 'react-router-dom';
 
 
 import {getAllHerbs} from "../services/herbs";
 import {allMedicalUsesList} from "../services/herbs";
 import {deleteSpace} from "../services/utilities";
+import {NavHashLink} from 'react-router-hash-link';
 
 
 function HerbsBySymptom() {
     const symptomsCard: any[] = [];
+    const {hash} = useLocation();
+    let activeClassName: string;
 
     for (let use of allMedicalUsesList) {
         let herbsWithSymptom = getAllHerbs().filter(herb => (herb.medicalUses).includes(use))
 
+        if ('#' + deleteSpace(use) === hash) {
+            activeClassName = 'card-header symptom-header shadow-lg bg-light rounded'
+        } else {
+            activeClassName = 'card-header symptom-header'
+        }
+
         symptomsCard.push(
             <div className="card symptom-card text-center">
-                <div className="card-header symptom-header" id={deleteSpace(use)}>
+                <div className={activeClassName} id={deleteSpace(use)}>
                     <h5>{use}</h5>
                 </div>
                 <ul className="list-group list-group-flush ">
                     {herbsWithSymptom.map((i) => (
-                            <Link to={"/herb/" + i.id}>
-                                <li className="list-group-item">{i.names[Language.english]}</li>
-                            </Link>
+                            <NavLink to={"/herb/" + i.id}>
+                                <li className="list-group-item border-0">{i.names[Language.english]}</li>
+                            </NavLink>
                         )
                     )}
                 </ul>
             </div>
         )
+
     }
 
     return (
-        <div className="container">
+        <div className="container mx-auto">
             <div className="col-6 col-md-3 sidenav">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut

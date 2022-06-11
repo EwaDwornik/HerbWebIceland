@@ -37,8 +37,8 @@ function Workshops() {
     }
 
     return (
-        <div className="container">
-            <div className="col-6 col-md-3 sidenav">
+        <div className="container mx-auto">
+            <div className="col-6 col-md-3 mx-auto sidenav">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut
                     labore et dolore magna aliqua. Lectus vestibulum mattis ullamcorper velit sed ullamcorper.
@@ -47,8 +47,8 @@ function Workshops() {
                     malesuada fames ac. Am et mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien.
                     Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. At tempor commodo
                     ullamcorper a lacus vestibulum sed arcu non.</p>
-                <div className="add-workshop">
-                    <a href="#collapseExample" className="btn" data-bs-toggle="collapse"
+                <div className="add-workshop ">
+                    <a href="#collapseExample" className="btn " data-bs-toggle="collapse"
                           role="button" aria-expanded="false" aria-controls="collapseExample">
                     Add workshop
                     </a>
@@ -62,7 +62,7 @@ function Workshops() {
                 </div>
 
                 <div>
-                    <p className="workshops"><h3>Workshops in Iceland:</h3></p>
+                    <p className="mb-3"><h3>Workshops in Iceland:</h3></p>
                     {workshopCards}
                 </div>
             </div>

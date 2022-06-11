@@ -6,7 +6,7 @@ import {Language} from "../model";
 function Contact() {
 
     return (
-        <div className="container">
+        <div className="container mx-auto">
             <div className="col-6 col-md-3 sidenav">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut
@@ -20,7 +20,7 @@ function Contact() {
 
             </div>
 
-            <div className="background col wider-grid">
+            <div className="background-contact col wider-grid">
                 <form>
                     <div className="row">
                         <div className="col-lg-6">

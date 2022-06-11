@@ -52,7 +52,7 @@ function HerbsByName() {
 
 
     return (
-        <div className='container'>
+        <div className='container mx-auto'>
 
             <div className="row">
                 <div className="col-6 col-md-3 sidenav">

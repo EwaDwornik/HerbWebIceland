@@ -15,11 +15,11 @@ const HerbName = () => {
 
     if (herb) {
         return (
-            <div className='container'>
+            <div className='container mx-auto'>
                 <div className="row ">
                     <div className="col-6 col-md-3 sidenav">
-                        <div className="text-center">
-                            <img src={herb.imageHerb} alt={herb.names[Language.english]}/>
+                        <div className="text-center ">
+                            <img className="w-80" src={herb.imageHerb} alt={herb.names[Language.english]}/>
                             {values.map((lang: Language) => (
                                 <p>{herb.names[lang]}</p>
                             ))}
@@ -27,21 +27,15 @@ const HerbName = () => {
                     </div>
 
                     <div className="col-md-9 wider-grid">
-                        <div className="medical-uses-box">
+                        <div className="medical-uses-box w-100">
                             <div className="row justify-content-evenly">
                                 <div className="col-4">
                                     <ul className="list-unstyled text-center">
                                         <h3>Medical uses</h3><br/>
                                         {herb.medicalUses.map((use: string) => (
                                             <NavHashLink
-                                                style={{
-                                                    background: 'red',
-                                                    color: 'white',
-                                                }}
-                                               /* activeStyle={{
-                                                    color: 'red'
-                                                }}*/
-
+                                                /*activeStyle={{
+                                                    color: 'red'}}*/
                                                 to={"/symptom#" + deleteSpace(use)}
                                             >
                                                 <li><h5>{use}</h5></li>

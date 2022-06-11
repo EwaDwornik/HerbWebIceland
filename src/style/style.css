@@ -44,18 +44,14 @@ a:link:hover, .nav-link:hover, link:hover {
 }
 
 .sidenav img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 30px;
-    width: 80%;
+    max-height: 350px;
 }
 
 .wider-grid {
     margin-top: 200px;
     margin-bottom: 50px;
     margin-left: 400px;
-    align-items: center;
 }
 
 /* Navigation */
@@ -79,7 +75,6 @@ a:link:hover, .nav-link:hover, link:hover {
 .card-names-custom {
     width: 200px;
     height: 270px;
-    align-items: center;
     margin: 20px;
 }
 
@@ -110,7 +105,6 @@ a:link:hover, .nav-link:hover, link:hover {
 
 
 .medical-uses-box {
-    width: 100%;
     float: right;
     padding: 100px;
     border-radius: 90px;
@@ -131,13 +125,10 @@ a:link:hover, .nav-link:hover, link:hover {
     padding: 0px;
 }
 
-.symptom-card li {
-    border: none;
-}
-
 .symptom-header {
     background-color: #d4e09b;
 }
+
 
 /* Workshops */
 
@@ -155,16 +146,11 @@ a:link:hover, .nav-link:hover, link:hover {
     margin-top: 50px;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.workshops {
-    margin-bottom: 30px;
 }
 
 /* Contact */
 
-.background {
+.background-contact {
     background-color: #d4e09b ;
     border-radius: 90px;
     padding: 50px;
