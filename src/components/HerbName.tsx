@@ -1,12 +1,12 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {useParams} from "react-router-dom";
-import {NavHashLink} from "react-router-hash-link";
-
 
 import '../style/style.css';
 import {Language} from "../model";
 import {deleteSpace} from "../services/utilities";
 import {getAllHerbs} from "../services/herbs";
+import {HashLink} from "react-router-hash-link";
+
 
 const HerbName = () => {
     const {id} = useParams();
@@ -33,13 +33,12 @@ const HerbName = () => {
                                     <ul className="list-unstyled text-center">
                                         <h3>Medical uses</h3><br/>
                                         {herb.medicalUses.map((use: string) => (
-                                            <NavHashLink
-                                                /*activeStyle={{
-                                                    color: 'red'}}*/
-                                                to={"/symptom#" + deleteSpace(use)}
+                                            <HashLink
+                                                to={"/symptom/#" + deleteSpace(use)}
+                                                scroll={(el) => el.scrollIntoView({behavior: 'auto', block: 'end'})}
                                             >
                                                 <li><h5>{use}</h5></li>
-                                            </NavHashLink>)
+                                            </HashLink>)
                                         )}
                                     </ul>
                                 </div>

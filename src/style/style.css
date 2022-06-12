@@ -122,13 +122,11 @@ a:link:hover, .nav-link:hover, link:hover {
 .symptom-card {
     width: 260px;
     margin: 20px;
-    padding: 0px;
 }
 
 .symptom-header {
     background-color: #d4e09b;
 }
-
 
 /* Workshops */
 

@@ -3,12 +3,9 @@ import '../style/style.css';
 import {Language} from "../model";
 import {NavLink, useLocation} from 'react-router-dom';
 
-
 import {getAllHerbs} from "../services/herbs";
 import {allMedicalUsesList} from "../services/herbs";
 import {deleteSpace} from "../services/utilities";
-import {NavHashLink} from 'react-router-hash-link';
-
 
 function HerbsBySymptom() {
     const symptomsCard: any[] = [];
@@ -23,6 +20,7 @@ function HerbsBySymptom() {
         } else {
             activeClassName = 'card-header symptom-header'
         }
+
 
         symptomsCard.push(
             <div className="card symptom-card text-center">
