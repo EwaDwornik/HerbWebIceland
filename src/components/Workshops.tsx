@@ -1,5 +1,4 @@
-import React from 'react';
-import {useState, useEffect} from "react";
+import React, {useState} from 'react';
 import '../style/style.css';
 
 import {getAllWorkshops} from "../services/workshops";
@@ -62,7 +61,7 @@ function Workshops() {
                 </div>
 
                 <div>
-                    <p className="mb-3"><h3>Workshops in Iceland:</h3></p>
+                    <p className="mb-3 mt-5"><h3>Workshops in Iceland:</h3></p>
                     {workshopCards}
                 </div>
             </div>

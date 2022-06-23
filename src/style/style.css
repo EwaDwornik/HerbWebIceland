@@ -8,7 +8,6 @@ body {
     color: #466803;
 }
 
-
 a:link, .nav-link, link {
     text-decoration: none;
     color: #466803 !important;
@@ -38,9 +37,7 @@ a:link:hover, .nav-link:hover, link:hover {
     top: 0;
     left: 0;
     overflow-x: hidden;
-    padding-top: 200px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 200px 30px 30px 30px;
 }
 
 .sidenav img {
@@ -96,20 +93,18 @@ a:link:hover, .nav-link:hover, link:hover {
 }
 
 .searching-child {
-    width: 100%;
     float: left;
 }
 
-
 /* HerbName */
-
 
 .medical-uses-box {
     float: right;
-    padding: 100px;
     border-radius: 90px;
     background-color: #d4e09b ;
     margin-bottom: 50px;
+    padding: 50px 100px;
+
 }
 
 .vegetation img {
@@ -119,13 +114,24 @@ a:link:hover, .nav-link:hover, link:hover {
 
 /* HerbsBySymptom */
 
+.symptom-cards{
+}
+
 .symptom-card {
     width: 260px;
-    margin: 20px;
+    padding: 0;
 }
 
 .symptom-header {
     background-color: #d4e09b;
+}
+
+.activated {
+    /*position: absolute;
+    top: 100px;*/
+    border-color: deeppink;
+    border: solid 2px;
+    color: deeppink;
 }
 
 /* Workshops */
@@ -157,3 +163,4 @@ a:link:hover, .nav-link:hover, link:hover {
     justify-content: center;
     align-items: center;
 }
+

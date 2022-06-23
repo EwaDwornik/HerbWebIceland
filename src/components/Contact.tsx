@@ -1,6 +1,4 @@
 import React from 'react';
-import kloefting from "../components/static/kloefting.png"
-import {Language} from "../model";
 
 
 function Contact() {
@@ -16,8 +14,6 @@ function Contact() {
                     malesuada fames ac. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien.
                     Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. At tempor commodo
                     ullamcorper a lacus vestibulum sed arcu non.</p>
-
-
             </div>
 
             <div className="background-contact col wider-grid">

@@ -17,7 +17,7 @@ export const herbsDB: Herb[] = [
         imageHerb: yarrow,
         medicalUses: ["fever", "common cold", "hay fever", "stomach discomfort"],
         sideEffects: ["drowsines", "increased urination", "skin irritation"],
-        precautions: ["pregnancy", "brest feeding", "allergy to ragweed and related plants"],
+        precautions: ["pregnancy", "breastfeeding", "allergy to ragweed and related plants"],
         description: "Yarrow is a plant that grows throughout the world. The above ground parts are used to make medicine. Yarrow contains chemicals that might help to stop stomachcramps and fight infections. People commonly use yarrow for eczema, irritable bowel syndrome (IBS), wound healing, and many other conditions, but there is no good scientific evidence to support these uses.Yarrow is sometimes called bloodwort. Don't confuse this with Bloodroot.",
         vegetation: "Yarrow vegetation description",
         vegetationPhoto: 'https://kort.ni.is/geoserver/ni/wms?service=WMS&version=1.1.0&request=GetMap&layers=ni:island-haed,ni:Floraisl_dreifing&cql_filter=Include;nafn=%27Achillea%20millefolium%27&styles=&bbox=239093.000,290000.000,761000.00,679982.000&width=1325&height=994&srs=EPSG:3057&format=image%2Fjpeg',
@@ -85,14 +85,11 @@ export const herbsDB: Herb[] = [
     },
 ]
 
-export const UsesListOfLists: string[][] = [];
-for (let i = 0; i < herbsDB.length; i++) {
-    UsesListOfLists.push(herbsDB[i].medicalUses);
-}
-export const flatUsesList = UsesListOfLists.flat();
-export const allMedicalUsesList = flatUsesList.filter(
-    (element, i) => i === flatUsesList.indexOf(element)
-);
+const allMedicalUsesSet = new Set<string>();
+herbsDB.forEach(herb => herb.medicalUses.forEach( use => allMedicalUsesSet.add(use)));
+
+export const allMedicalUses = Array.from(allMedicalUsesSet);
+allMedicalUses.sort();
 
 export function getAllHerbs(): Herb[] {
     return herbsDB.map((obj) => {

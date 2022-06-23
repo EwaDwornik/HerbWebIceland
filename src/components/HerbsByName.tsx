@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 
 import '../style/style.css';
@@ -55,15 +55,15 @@ function HerbsByName() {
         <div className='container mx-auto'>
 
             <div className="row">
-                <div className="col-6 col-md-3 sidenav">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        ut
-                        labore et dolore magna aliqua. Lectus vestibulum mattis ullamcorper velit sed ullamcorper.
-                        In
-                        nibh mauris cursus mattis. Amet est placerat in egestas erat. Tristique senectus et netus et
-                        malesuada fames ac. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien.
-                        Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. At tempor commodo
-                        ullamcorper a lacus vestibulum sed arcu non.</p>
+                <div className="col-6 col-md-3 sidenav text-center">
+                    <p><h4>You might think that Icelandic flora is poor</h4>and you might be right. <br /> <br />
+                        But! Between the lava fields and glaciers you can find plenty of medical herbs, at least 85,
+                        that can help you to improve your life.
+                        Tough climate made them very potent, few leaves taken from birch won’t harm the tree, but their
+                        diuretic properties can help you with getting rid of excess water in your body. <br/>Some
+                        things are just good to know and that’s why this website exists. <br />
+                        We categorised local herbs to
+                        help you find the ones for your current needs. Enjoy!</p>
                 </div>
 
                 <div className='container col-md-9 wider-grid'>

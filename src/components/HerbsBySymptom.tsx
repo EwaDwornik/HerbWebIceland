@@ -1,30 +1,45 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../style/style.css';
 import {Language} from "../model";
 import {NavLink, useLocation} from 'react-router-dom';
 
-import {getAllHerbs} from "../services/herbs";
-import {allMedicalUsesList} from "../services/herbs";
+import {allMedicalUses, getAllHerbs} from "../services/herbs";
 import {deleteSpace} from "../services/utilities";
 
 function HerbsBySymptom() {
     const symptomsCard: any[] = [];
     const {hash} = useLocation();
     let activeClassName: string;
+   // const chosenSymptom: any[] = [];
 
-    for (let use of allMedicalUsesList) {
+
+
+    useEffect(() => {
+        const selectedId: any = document.getElementById(hash);
+        console.log(selectedId);
+      //  chosenSymptom.push(selectedId);
+      //  console.log(chosenSymptom)
+
+    }, [])
+
+    allMedicalUses.forEach((use) => {
         let herbsWithSymptom = getAllHerbs().filter(herb => (herb.medicalUses).includes(use))
 
+        /*for (let i = 0; i < allMedicalUses.length; i++) {
+            if ("#" + allMedicalUses[i] === hash) {
+                allMedicalUses.splice(i, 1)
+            }
+        }*/
+
         if ('#' + deleteSpace(use) === hash) {
-            activeClassName = 'card-header symptom-header shadow-lg bg-light rounded'
+            activeClassName = 'card m-2 symptom-card text-center activated';
         } else {
-            activeClassName = 'card-header symptom-header'
+            activeClassName = 'card m-2 symptom-card text-center'
         }
 
-
         symptomsCard.push(
-            <div className="card symptom-card text-center">
-                <div className={activeClassName} id={deleteSpace(use)}>
+            <div className={activeClassName} id={'#' + deleteSpace(use)}>
+                <div className="card-header symptom-header">
                     <h5>{use}</h5>
                 </div>
                 <ul className="list-group list-group-flush ">
@@ -37,8 +52,7 @@ function HerbsBySymptom() {
                 </ul>
             </div>
         )
-
-    }
+    })
 
     return (
         <div className="container mx-auto">
@@ -49,11 +63,11 @@ function HerbsBySymptom() {
                     In
                     nibh mauris cursus mattis. Amet est placerat in egestas erat. Tristique senectus et netus et
                     malesuada fames ac. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien.
-                    Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. At tempor commodo
+                    Pellentesque elit uillamcorper dignissim cras tincidunt lobortis feugiat. At tempor commodo
                     ullamcorper a lacus vestibulum sed arcu non.</p>
             </div>
             <div className="wider-grid">
-                <div className="row">
+                <div className="row symptom-cards">
                     {symptomsCard}
                 </div>
             </div>

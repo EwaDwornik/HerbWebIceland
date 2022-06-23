@@ -27,7 +27,7 @@ const HerbName = () => {
                     </div>
 
                     <div className="col-md-9 wider-grid">
-                        <div className="medical-uses-box w-100">
+                        <div className="medical-uses-box w-100 m-10">
                             <div className="row justify-content-evenly">
                                 <div className="col-4">
                                     <ul className="list-unstyled text-center">
