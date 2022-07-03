@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 
 import '../style/style.css';
@@ -13,11 +13,21 @@ function HerbsByName() {
     const defaultLanguage = Language.english
     const [herbs, setHerbs] = useState(sortByLanguage(getAllHerbs(), defaultLanguage));
     const [sortedBy, setSortedBy] = useState(defaultLanguage);
+    const [data, setData] = useState([])
 
     function sortStateBy(lang: Language) {
         setHerbs(sortByLanguage(herbs, lang));
         setSortedBy(lang)
     }
+
+    useEffect(()=> {
+        (async ()=> {
+           const endpoint = 'http://localhost:4000/herbs';
+           const response = await fetch(endpoint);
+           const dataSource =  await response.json()
+           setData(dataSource)
+        })()
+    }, [])
 
     const [searchTerm, setSearchTerm] = useState("");
     const handleChange = (event: any) => {

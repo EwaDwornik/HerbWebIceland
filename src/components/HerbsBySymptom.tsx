@@ -12,8 +12,6 @@ function HerbsBySymptom() {
     let activeClassName: string;
    // const chosenSymptom: any[] = [];
 
-
-
     useEffect(() => {
         const selectedId: any = document.getElementById(hash);
         console.log(selectedId);
