@@ -1,9 +1,8 @@
 import React from 'react';
 import '../style/style.css';
 
-
+// Page where you can read articles about herbs.
 function Articles() {
-
 
     return (
         <div className="container">

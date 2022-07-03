@@ -6,24 +6,29 @@ import {NavLink, useLocation} from 'react-router-dom';
 import {allMedicalUses, getAllHerbs} from "../services/herbs";
 import {deleteSpace} from "../services/utilities";
 
+
+// Page where user can see what herbs are good for a certain issue
 function HerbsBySymptom() {
     const symptomsCard: any[] = [];
     const {hash} = useLocation();
     let activeClassName: string;
-   // const chosenSymptom: any[] = [];
 
+    // selecting a chosen element to be able to move it in front of others
     useEffect(() => {
         const selectedId: any = document.getElementById(hash);
         console.log(selectedId);
-      //  chosenSymptom.push(selectedId);
-      //  console.log(chosenSymptom)
-
+        /*
+        "adding a chosen div to the beginning of the list"
+        chosenSymptom.push(selectedId);
+        console.log(chosenSymptom)
+        */
     }, [])
 
     allMedicalUses.forEach((use) => {
         let herbsWithSymptom = getAllHerbs().filter(herb => (herb.medicalUses).includes(use))
-
-        /*for (let i = 0; i < allMedicalUses.length; i++) {
+        /*
+        "deleting a chosen div from the list"
+        for (let i = 0; i < allMedicalUses.length; i++) {
             if ("#" + allMedicalUses[i] === hash) {
                 allMedicalUses.splice(i, 1)
             }

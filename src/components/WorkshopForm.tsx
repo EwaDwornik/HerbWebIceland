@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-
 import {workshopDB} from "../services/workshops";
 import {generateIdWorkshop} from "../services/utilities";
 import {Workshop} from "../model";
@@ -15,6 +14,7 @@ const initialState: Workshop = {
     event: ''
 };
 
+// Form to add a workshop. It is sorted by a date.
 
 export function WorkshopForm({addWorkshop}: any) {
     const [formState, setFormState] = useState(initialState);

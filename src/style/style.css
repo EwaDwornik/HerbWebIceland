@@ -1,6 +1,5 @@
 /* overall changes */
 body {
-    font-family: 'Poppins', sans-serif;
     font-family: 'Questrial', sans-serif;
     margin-right: 70px;
     background-color: #ffffff;
@@ -104,7 +103,6 @@ a:link:hover, .nav-link:hover, link:hover {
     background-color: #d4e09b ;
     margin-bottom: 50px;
     padding: 50px 100px;
-
 }
 
 .vegetation img {
@@ -113,9 +111,6 @@ a:link:hover, .nav-link:hover, link:hover {
 }
 
 /* HerbsBySymptom */
-
-.symptom-cards{
-}
 
 .symptom-card {
     width: 260px;

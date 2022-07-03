@@ -1,10 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import {Link} from 'react-router-dom';
 
 import '../style/style.css';
 import {Herb, Language} from "../model";
 import {getAllHerbs} from "../services/herbs";
 
+//Page where you can see all herbs in alphabetic chronology
+
+//function that sorts herbs by a chosen language
 function sortByLanguage(herbs: Herb[], lang: Language): Herb[] {
     return [...herbs].sort((a: Herb, b: Herb) => (a.names[lang] > b.names[lang]) ? 1 : -1)
 }
@@ -13,21 +16,11 @@ function HerbsByName() {
     const defaultLanguage = Language.english
     const [herbs, setHerbs] = useState(sortByLanguage(getAllHerbs(), defaultLanguage));
     const [sortedBy, setSortedBy] = useState(defaultLanguage);
-    const [data, setData] = useState([])
 
     function sortStateBy(lang: Language) {
         setHerbs(sortByLanguage(herbs, lang));
         setSortedBy(lang)
     }
-
-    useEffect(()=> {
-        (async ()=> {
-           const endpoint = 'http://localhost:4000/herbs';
-           const response = await fetch(endpoint);
-           const dataSource =  await response.json()
-           setData(dataSource)
-        })()
-    }, [])
 
     const [searchTerm, setSearchTerm] = useState("");
     const handleChange = (event: any) => {
@@ -60,10 +53,8 @@ function HerbsByName() {
         )
     }
 
-
     return (
         <div className='container mx-auto'>
-
             <div className="row">
                 <div className="col-6 col-md-3 sidenav text-center">
                     <p><h4>You might think that Icelandic flora is poor</h4>and you might be right. <br /> <br />
