@@ -5,6 +5,8 @@ import {getAllWorkshops} from "../services/workshops";
 import WorkshopForm from "./WorkshopForm";
 import {Workshop} from "../model";
 
+//list of all herbal workshops that happen in Iceland.
+
 function Workshops() {
     const [list, updateList] = useState(getAllWorkshops());
 

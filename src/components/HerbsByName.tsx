@@ -5,7 +5,7 @@ import '../style/style.css';
 import {Herb, Language} from "../model";
 import {getAllHerbs} from "../services/herbs";
 
-//Page where you can see all herbs in alphabetic chronology
+//Page where you can see all herbs in alphabetic chronology.
 
 //function that sorts herbs by a chosen language
 function sortByLanguage(herbs: Herb[], lang: Language): Herb[] {

@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Simple contact page.
 function Contact() {
 
     return (

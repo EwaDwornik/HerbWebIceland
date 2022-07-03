@@ -7,7 +7,7 @@ import {deleteSpace} from "../services/utilities";
 import {getAllHerbs} from "../services/herbs";
 import {HashLink} from "react-router-hash-link";
 
-
+// Page about a herb, user can read about it, see where it grows abd when to use it.
 const HerbName = () => {
     const {id} = useParams();
     const herb = getAllHerbs().find((h: { id: number }) => h.id === Number(id));

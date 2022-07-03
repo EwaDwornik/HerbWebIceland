@@ -7,7 +7,7 @@ import {allMedicalUses, getAllHerbs} from "../services/herbs";
 import {deleteSpace} from "../services/utilities";
 
 
-// Page where user can see what herbs are good for a certain issue
+// Page where user can see what herbs are good for a certain issue.
 function HerbsBySymptom() {
     const symptomsCard: any[] = [];
     const {hash} = useLocation();
