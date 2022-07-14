@@ -1,8 +1,33 @@
 import React from 'react';
 import '../style/style.css';
+import {getAllArticles} from "../services/articles";
+import {Article} from "../model";
+
 
 // Page where you can read articles about herbs.
 function Articles() {
+
+    const articlesCard: any[] = [];
+    for (let article of getAllArticles()) {
+        articlesCard.push(
+            <div className="container">
+                <div className="row">
+                    <div className="col">
+                        <div className="card">
+                            <h5 className="card-header">{article.title}</h5>
+                            <div className="card-body">
+                                <p className="card-text">{article.shortDescription}</p>
+                                <a href="#" className="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col">
+                        {article.imageArtilces}
+                    </div>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="container">
@@ -17,7 +42,9 @@ function Articles() {
                     ullamcorper a lacus vestibulum sed arcu non.</p>
             </div>
             <div className="wider-grid">
-
+                <div>
+                    {articlesCard}
+                </div>
             </div>
         </div>
     );

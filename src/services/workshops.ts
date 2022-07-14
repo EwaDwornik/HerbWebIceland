@@ -1,6 +1,5 @@
-import {Herb, Workshop} from "../model";
+import { Workshop} from "../model";
 import {generateIdWorkshop} from "./utilities";
-import {herbsDB} from "./herbs";
 
 export const workshopDB: Workshop[] = [
     {

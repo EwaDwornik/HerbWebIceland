@@ -16,7 +16,7 @@ function Contact() {
                     ullamcorper a lacus vestibulum sed arcu non.</p>
             </div>
 
-            <div className="background-contact col wider-grid">
+            <div className="background-green col wider-grid">
                 <form>
                     <div className="row">
                         <div className="col-lg-6">
