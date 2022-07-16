@@ -159,3 +159,23 @@ a:link:hover, .nav-link:hover, link:hover {
     align-items: center;
 }
 
+/* Articles */
+
+.long-description-article {
+    border: none;
+    margin-left: -15px;
+}
+
+.searching-articles {
+    margin-bottom: 20px;
+    border-color: #466803 !important;
+}
+
+.btn-article {
+    margin: 15px 0px 0px 0px;
+}
+
+[aria-expanded="false"] > .expanded,
+[aria-expanded="true"] > .collapsed {
+    display: none;
+}
