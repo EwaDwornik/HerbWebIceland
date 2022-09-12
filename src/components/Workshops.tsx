@@ -34,8 +34,7 @@ function Workshops() {
                     </div>
                 </div>
             </div>
-        )
-    }
+        )}
 
     return (
         <div className="container mx-auto">
@@ -49,14 +48,14 @@ function Workshops() {
                     Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. At tempor commodo
                     ullamcorper a lacus vestibulum sed arcu non.</p>
                 <div className="add-workshop ">
-                    <a href="#collapseExample" className="btn " data-bs-toggle="collapse"
-                          role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <a href="#collapseWorkshop" className="btn " data-bs-toggle="collapse"
+                          role="button" aria-expanded="false" aria-controls="collapseWorkshop">
                     Add workshop
                     </a>
                 </div>
             </div>
             <div className="wider-grid">
-                <div className="collapse" id="collapseExample">
+                <div className="collapse" id="collapseWorkshop">
                     <div className="card card-body">
                         <WorkshopForm addWorkshop={addWorkshop}/>
                     </div>
@@ -68,7 +67,7 @@ function Workshops() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
 export default Workshops;

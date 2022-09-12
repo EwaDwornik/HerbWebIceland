@@ -4,7 +4,7 @@ import '../style/style.css';
 function Navigation() {
     return (
             <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light navbar-custom">
-                <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                <div className="navbar-collapse collapse w-100 order-md-0 dual-collapse2">
                     <ul className="navbar-nav mr-auto">
 
                         <li className="nav-item">
@@ -17,12 +17,8 @@ function Navigation() {
                 </div>
                 <div className="mx-auto order-0 navbar-middle">
                     <p className="navbar-brand mx-auto">ICELANDIC HERBS</p>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target=".dual-collapse2">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
                 </div>
-                <div className="collapse navbar-collapse w-100 order-3 dual-collapse2 " id="navbarSupportedContent">
+                <div className="collapse navbar-collapse w-100 order-3" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
                             <a className="nav-link" href="/contact">Contact</a>
@@ -36,8 +32,7 @@ function Navigation() {
                     </ul>
                 </div>
             </nav>
-
-    );
+    )
 }
 
 export default Navigation;

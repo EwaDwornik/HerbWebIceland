@@ -12,12 +12,16 @@ a:link, .nav-link, link {
     color: #466803 !important;
 }
 
-a:link:hover, .nav-link:hover, link:hover {
+.nav-link:hover, link:hover {
     text-decoration: none;
     color: #0F3325 !important;
 }
 
-.btn {
+a:link:hover {
+    color: #0F3325 !important;
+}
+
+.btn, a:link {
     background-color: #ffffff;
     border-color: #466803;
     color: #0F3325;
@@ -36,11 +40,13 @@ a:link:hover, .nav-link:hover, link:hover {
     top: 0;
     left: 0;
     overflow-x: hidden;
-    padding: 200px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px;
 }
 
 .sidenav img {
-    margin-bottom: 30px;
     max-height: 350px;
 }
 
@@ -172,7 +178,8 @@ a:link:hover, .nav-link:hover, link:hover {
 }
 
 .btn-article {
-    margin: 15px 0px 0px 0px;
+    margin: 15px 0 0 0;
+
 }
 
 [aria-expanded="false"] > .expanded,
