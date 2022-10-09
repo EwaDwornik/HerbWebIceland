@@ -33,26 +33,6 @@ function HerbsByName() {
         (herb.names[Language.icelandic]).toLowerCase().includes(searchTerm)
     );
 
-    const herbCards: any[] = [];
-    for (let herb of results) {
-
-        herbCards.push(
-            <div className="col">
-                <Link to={"/herb/" + herb.id}>
-                    <div className="card card-names-custom">
-                        <div className="card-body">
-                            <img className="card-img-top" src={herb.imageHerb} alt={herb.names[Language.english]}/>
-                        </div>
-                        <div className="card-footer footer-by-name">
-                            <h5 className="card-title">{herb.names[sortedBy]} </h5>
-                            <p className="card-text">{herb.names[Language.latin]}</p>
-                        </div>
-                    </div>
-                </Link>
-            </div>
-        )
-    }
-
     return (
         <div className='container mx-auto'>
             <div className="row">
@@ -89,7 +69,24 @@ function HerbsByName() {
                         </div>
                     </div>
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-                        {herbCards}
+                        {results.map((single) =>
+                            <div className="col">
+                                <Link to={"/herb/" + single.id}>
+                                    <div className="card card-names-custom">
+                                        <div className="card-body">
+                                            <img className="card-img-top"
+                                                   src={single.imageHerb}
+                                                   alt={single.names[Language.english]}
+                                            />
+                                        </div>
+                                        <div className="card-footer footer-by-name">
+                                            <h5 className="card-title">{single.names[sortedBy]} </h5>
+                                            <p className="card-text">{single.names[Language.latin]}</p>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

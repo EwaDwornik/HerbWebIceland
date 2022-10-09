@@ -14,43 +14,6 @@ function Articles() {
         (article.shortDescription).toLowerCase().includes(searchTerm)
     );
 
-    const articlesCard: any[] = [];
-    for (let article of results) {
-
-        articlesCard.push(
-            <div>
-                <div className="card mb-3">
-                    <div className="row g-0 workshop-card">
-                        <div className="col-md-4 ">
-                            <img src={article.imageArtilces} className="img-fluid rounded-start"
-                                 alt={article.imageArtilces}/>
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body">
-                                <h5 className="card-title">{article.title}</h5>
-                                <p className="card-text">{article.shortDescription}</p>
-                            </div>
-                        </div>
-                        <div className="collapse " id={"article" + article.id}>
-                            <div className="card card-body long-description-article">
-                                {article.longDescription}
-                            </div>
-                        </div>
-                        <a href={"#article" + article.id} className="btn btn-article" data-bs-toggle="collapse"
-                           role="button" aria-expanded="false" aria-controls={"article" + article.id}>
-                            <span className="collapsed">
-                                Show more
-                            </span>
-                            <span className="expanded">
-                                Show less
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        )
-    }
-
     return (
         <div className="container">
             <div className="col-6 col-md-3 sidenav">
@@ -77,7 +40,39 @@ function Articles() {
                     </div>
                 </div>
                 <div>
-                    {articlesCard}
+                    {results.map((article) =>
+                        <div>
+                            <div className="card mb-3">
+                                <div className="row g-0 workshop-card">
+                                    <div className="col-md-4 ">
+                                        <img src={article.imageArtilces} className="img-fluid rounded-start"
+                                             alt={article.imageArtilces}/>
+                                    </div>
+                                    <div className="col-md-8">
+                                        <div className="card-body">
+                                            <h5 className="card-title">{article.title}</h5>
+                                            <p className="card-text">{article.shortDescription}</p>
+                                        </div>
+                                    </div>
+                                    <div className="collapse " id={"article" + article.id}>
+                                        <div className="card card-body long-description-article">
+                                            {article.longDescription}
+                                        </div>
+                                    </div>
+                                    <a href={"#article" + article.id} className="btn btn-article" data-bs-toggle="collapse"
+                                       role="button" aria-expanded="false" aria-controls={"article" + article.id}>
+                            <span className="collapsed">
+                                Show more
+                            </span>
+                                        <span className="expanded">
+                                Show less
+                            </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                    })
                 </div>
             </div>
         </div>

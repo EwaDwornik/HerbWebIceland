@@ -14,27 +14,6 @@ function Workshops() {
         updateList([...list, workshop])
     }
 
-    const workshopCards: any[] = [];
-    for (let workshop of getAllWorkshops()) {
-        workshopCards.push(
-            <div className="card mb-3">
-                <div className="row g-0 workshop-card">
-                    <div className="col-md-4 ">
-                        <img src={workshop.imageWorkshop} className="img-fluid rounded-start"
-                             alt={workshop.imageWorkshop}/>
-                    </div>
-                    <div className="col-md-8">
-                        <div className="card-body">
-                            <h5 className="card-title">{workshop.title}</h5>
-                            <h5 className="card-title">{workshop.date}</h5>
-                            <p className="card-text">{workshop.description}</p>
-                            <p className="card-text"><small className="text-muted">Link to the event: <a
-                                href={workshop.event}>click here!</a></small></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )}
 
     return (
         <div className="container mx-auto">
@@ -50,7 +29,6 @@ function Workshops() {
                 <div className="add-workshop ">
                     <a href="#collapseWorkshop" className="btn " data-bs-toggle="collapse"
                           role="button" aria-expanded="false" aria-controls="collapseWorkshop">
-                    Add workshop
                     </a>
                 </div>
             </div>
@@ -63,7 +41,24 @@ function Workshops() {
 
                 <div>
                     <p className="mb-3 mt-5 "><h3>Workshops in Iceland:</h3></p>
-                    {workshopCards}
+                    {getAllWorkshops().map ((workshop) =>
+                        <div className="card mb-3">
+                            <div className="row g-0 workshop-card">
+                                <div className="col-md-4 ">
+                                    <img src={workshop.imageWorkshop} className="img-fluid rounded-start"
+                                         alt={workshop.imageWorkshop}/>
+                                </div>
+                                <div className="col-md-8">
+                                    <div className="card-body">
+                                        <h5 className="card-title">{workshop.title}</h5>
+                                        <h5 className="card-title">{workshop.date}</h5>
+                                        <p className="card-text">{workshop.description}</p>
+                                        <p className="card-text"><small className="text-muted">Link to the event: <a
+                                            href={workshop.event}>click here!</a></small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>)}
                 </div>
             </div>
         </div>
