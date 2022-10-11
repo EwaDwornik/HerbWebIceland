@@ -1,18 +1,17 @@
 /* overall changes */
 body {
     font-family: 'Questrial', sans-serif;
-    margin-right: 70px;
     background-color: #ffffff;
-    text-align: justify;
+    text-align: center;
     color: #466803;
 }
 
-a:link, .nav-link, link {
+a {
     text-decoration: none;
     color: #466803 !important;
 }
 
-.nav-link:hover, link:hover {
+a:hover {
     text-decoration: none;
     color: #0F3325 !important;
 }
@@ -21,7 +20,7 @@ a:link:hover {
     color: #0F3325 !important;
 }
 
-.btn, a:link {
+.btn {
     background-color: #ffffff;
     border-color: #466803;
     color: #0F3325;
@@ -33,43 +32,77 @@ a:link:hover {
     border-color: #466803;
 }
 
-.sidenav {
-    height: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
+.high-div {
+    min-height: 300px;
+}
+
+.middle-high-div {
+    min-height: 120px;
+}
+
+.center-element {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    margin: 15px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.sidenav img {
-    max-height: 350px;
-}
-
-.wider-grid {
-    margin-top: 200px;
-    margin-bottom: 50px;
-    margin-left: 400px;
+.center-element p {
+    max-width: 750px;
 }
 
 /* Navigation */
-
-.navbar-custom .navbar-brand {
-    padding: 10px;
-    font-size: 25px;
-    color: #466803;
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 100px;
+    align-items: center;
+    border-bottom: black solid 1px;
+    font-size: 110%;
 }
 
-.navbar-custom {
-    font-size: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-bottom: 1px solid;
-    background-color: #ffffff !important;
+.navigation div a {
+    margin: 15px;
+}
+
+.space-around {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 20px;
+}
+
+.herb-img, .vegetation-img {
+    height: 300px;
+}
+
+.box {
+    border-radius: 90px;
+    background-color: #d4e09b;
+    padding: 50px;
+    min-width: 280px;
+    max-width: 60%;
+}
+
+/* Workshop & Articles*/
+.workshop-card, .article-card {
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-gap: 5%;
+    margin: 25px;
+}
+
+.long-description-article {
+    border: none;
+}
+
+.add-workshop {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 /* HerbsByName */
@@ -93,33 +126,10 @@ a:link:hover {
     background-color: #d4e09b;
 }
 
-.searching {
-    padding: 20px;
-}
-
-.searching-child {
-    float: left;
-}
-
-/* HerbName */
-
-.medical-uses-box {
-    float: right;
-    border-radius: 90px;
-    background-color: #d4e09b ;
-    margin-bottom: 50px;
-    padding: 50px 100px;
-}
-
-.vegetation img {
-    width: 130%;
-    margin-right: 30px;
-}
-
 /* HerbsBySymptom */
 
 .symptom-card {
-    width: 260px;
+    width: 20%;
     padding: 0;
 }
 
@@ -128,59 +138,12 @@ a:link:hover {
 }
 
 .activated {
-    /*position: absolute;
-    top: 100px;*/
     border-color: deeppink;
     border: solid 2px;
     color: deeppink;
 }
 
-/* Workshops */
-
-.workshop-card {
-    display: flex;
-    align-items: center;
-    margin: 20px;
-}
-
-.workshop-card img {
-    height: 280px;
-}
-
-.add-workshop {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-}
-
-/* Contact */
-
-.background-green {
-    background-color: #d4e09b ;
-    border-radius: 90px;
-    padding: 50px;
-    color: #0F3325;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Articles */
-
-.long-description-article {
-    border: none;
-    margin-left: -15px;
-}
-
-.searching-articles {
-    margin-bottom: 20px;
-    border-color: #466803 !important;
-}
-
-.btn-article {
-    margin: 15px 0 0 0;
-
-}
+/* other */
 
 [aria-expanded="false"] > .expanded,
 [aria-expanded="true"] > .collapsed {

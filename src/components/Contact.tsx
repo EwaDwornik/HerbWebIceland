@@ -4,19 +4,19 @@ import React from 'react';
 function Contact() {
 
     return (
-        <div className="container mx-auto">
-            <div className="col-6 col-md-3 sidenav">
+        <div className="center-element">
+            <div className="center-element high-div">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut
                     labore et dolore magna aliqua. Lectus vestibulum mattis ullamcorper velit sed ullamcorper.
                     In
                     nibh mauris cursus mattis. Amet est placerat in egestas erat. Tristique senectus et netus et
                     malesuada fames ac. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien.
-                    Pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat. At tempor commodo
+                    Pellentesque elit uillamcorper dignissim cras tincidunt lobortis feugiat. At tempor commodo
                     ullamcorper a lacus vestibulum sed arcu non.</p>
             </div>
 
-            <div className="background-green col wider-grid">
+            <div className="box center-element">
                 <form>
                     <div className="row">
                         <div className="col-lg-6">

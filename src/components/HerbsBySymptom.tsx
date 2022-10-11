@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import '../style/style.css';
 import {Language} from "../model";
-import {NavLink, useLocation} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
 import {allMedicalUses, getAllHerbs} from "../services/herbs";
 import {deleteSpace} from "../services/utilities";
@@ -9,7 +9,6 @@ import {deleteSpace} from "../services/utilities";
 
 // Page where user can see what herbs are good for a certain issue.
 function HerbsBySymptom() {
-    const symptomsCard: any[] = [];
     const {hash} = useLocation();
     let activeClassName: string;
 
@@ -24,15 +23,9 @@ function HerbsBySymptom() {
         */
     }, [])
 
-    allMedicalUses.forEach((use) => {
+    const symptomsCard: any[] = [];
+    allMedicalUses.map((use) => {
         let herbsWithSymptom = getAllHerbs().filter(herb => (herb.medicalUses).includes(use))
-        /*
-        "deleting a chosen div from the list"
-        for (let i = 0; i < allMedicalUses.length; i++) {
-            if ("#" + allMedicalUses[i] === hash) {
-                allMedicalUses.splice(i, 1)
-            }
-        }*/
 
         if ('#' + deleteSpace(use) === hash) {
             activeClassName = 'card m-2 symptom-card text-center activated';
@@ -47,9 +40,9 @@ function HerbsBySymptom() {
                 </div>
                 <ul className="list-group list-group-flush ">
                     {herbsWithSymptom.map((i) => (
-                            <NavLink to={"/herb/" + i.id}>
+                            <Link to={"/herb/" + i.id}>
                                 <li className="list-group-item border-0">{i.names[Language.english]}</li>
-                            </NavLink>
+                            </Link>
                         )
                     )}
                 </ul>
@@ -57,9 +50,8 @@ function HerbsBySymptom() {
         )
     })
 
-    return (
-        <div className="container mx-auto">
-            <div className="col-6 col-md-3 sidenav">
+    return (<div>
+            <div className="center-element high-div">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut
                     labore et dolore magna aliqua. Lectus vestibulum mattis ullamcorper velit sed ullamcorper.
@@ -69,10 +61,8 @@ function HerbsBySymptom() {
                     Pellentesque elit uillamcorper dignissim cras tincidunt lobortis feugiat. At tempor commodo
                     ullamcorper a lacus vestibulum sed arcu non.</p>
             </div>
-            <div className="wider-grid">
-                <div className="row symptom-cards">
-                    {symptomsCard}
-                </div>
+            <div className="space-around">
+                {symptomsCard}
             </div>
         </div>
     )

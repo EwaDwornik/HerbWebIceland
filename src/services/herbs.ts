@@ -47,7 +47,7 @@ export const herbsDB: Herb[] = [
         imageHerb: garlic,
         medicalUses: ["high blood pressure", "high blood sugar", "high cholesterol", "stomach discomfort"],
         sideEffects: ["bad breath", "might increase the risk of bleeding"],
-        precautions: ["Garlic is possibly unsafe when used in medicinal amounts during pregnancy and when breast-feeding"],
+        precautions: ["pregnancy", "breast-feeding"],
         description: 'Garlic description',
         vegetation: "garlic vegetation description",
     },

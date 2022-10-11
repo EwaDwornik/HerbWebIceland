@@ -15,54 +15,46 @@ const HerbName = () => {
 
     if (herb) {
         return (
-            <div className='container mx-auto'>
-                <div className="row ">
-                    <div className="col-6 col-md-3 sidenav">
-                        <div className="text-center ">
-                            <img className="w-80" src={herb.imageHerb} alt={herb.names[Language.english]}/>
-                            {values.map((lang: Language) => (
-                                <p>{herb.names[lang]}</p>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div className="col-md-9 wider-grid">
-                        <div className="medical-uses-box w-100 m-10">
-                            <div className="row justify-content-evenly">
-                                <div className="col-4">
-                                    <ul className="list-unstyled text-center">
-                                        <h3>Medical uses</h3><br/>
-                                        {herb.medicalUses.map((use: string) => (
-                                            <HashLink
-                                                to={"/symptom/#" + deleteSpace(use)}
-                                                scroll={(el) => el.scrollIntoView({behavior: 'auto', block: 'end'})}
-                                            >
-                                                <li><h5>{use}</h5></li>
-                                            </HashLink>)
-                                        )}
-                                    </ul>
-                                </div>
-                                <div className="col-4">
-                                    <ul className="list-unstyled text-center">
-                                        <h3>Precautions</h3><br/>
-                                        {herb.precautions.map((precaution: string) => (
-                                            <li><h5>{precaution}</h5></li>)
-                                        )}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="vegetation">
-                            <div className="row justify-content-evenly">
-                                <h3>Vegetation information</h3><br/>
-                                <div className="col-4">{herb.vegetation}</div>
-                                <div className="col-4"><img src={herb.vegetationPhoto} alt={herb.names.english}/></div>
-                            </div>
-                        </div>
-
-                    </div>
+            <div>
+                <div className="space-around middle-high-div">
+                    {values.map((lang: Language) => (
+                        <div>{herb.names[lang]}</div>
+                    ))}
                 </div>
+                <div className="space-around">
+                    <div className="one-third box">
+                        {herb.medicalUses.map((use: string) => (
+                            <HashLink
+                                to={"/symptom/#" + deleteSpace(use)}
+                                scroll={(el) => el.scrollIntoView({behavior: 'auto', block: 'end'})}
+                            >
+                                <h5>{use}</h5>
+                            </HashLink>)
+                        )}
+                    </div>
+                    <div className="one-third">
+                        <img className="herb-img" src={herb.imageHerb} alt={herb.names[Language.english]}/>
 
+                    </div>
+                    <div className="one-third box">
+                        {herb.precautions.map((precaution: string) => (
+                            <HashLink
+                                to={"/symptom/#" + deleteSpace(precaution)}
+                                scroll={(el) => el.scrollIntoView({behavior: 'auto', block: 'end'})}
+                            >
+                                <h5>{precaution}</h5>
+                            </HashLink>)
+                        )}
+                    </div>
+
+                </div>
+                <div className="space-around">
+                    <h3>Vegetation information</h3>
+                </div>
+                <div className="space-around">
+                    <div>{herb.vegetation}</div>
+                    <img className="vegetation-img" src={herb.vegetationPhoto} alt={herb.names.english}/>
+                </div>
             </div>
 
         )
