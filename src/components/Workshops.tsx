@@ -17,7 +17,7 @@ function Workshops() {
 
 
     return (
-        <div>
+        <div className="page">
             <div className="center-element high-div">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut
@@ -34,7 +34,7 @@ function Workshops() {
             </div>
 
             <div className="collapse middle-high-div" id="collapseWorkshop">
-                <div className="card card-body">
+                <div className="card form-workshop card-body">
                     <WorkshopForm addWorkshop={addWorkshop}/>
                 </div>
             </div>

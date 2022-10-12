@@ -28,7 +28,7 @@ export function WorkshopForm({addWorkshop}: any) {
     };
 
     return (
-            <div className="center-element">
+            <div className="center-element ">
                 <form onSubmit={handleSubmit} className="row g-3 center-element">
                     <div className="col-md-5">
                         <label className="form-label">Title:</label>

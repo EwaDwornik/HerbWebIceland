@@ -77,7 +77,7 @@ export const herbsDB: Herb[] = [
         imageHerb: birch,
         medicalUses: ["joint pain", "kidney stones", "bladder stones", "dandruff"],
         sideEffects: ["drowsines", "increased urination", "skin irritation"],
-        precautions: ["pregnancy", "breast-feeding", "allergy to wild carrot, mugwort, celery, and other spices", "High blood pressure"],
+        precautions: ["pregnancy", "breast-feeding", "allergy to wild carrot, mugwort and celery", "High blood pressure"],
         description: 'Birch description',
         vegetation: 'Birch vegetation description',
         vegetationPhoto: 'https://kort.ni.is/geoserver/ni/wms?service=WMS&version=1.1.0&request=GetMap&layers=ni:island-haed,ni:Floraisl_dreifing&cql_filter=Include;nafn=%27Betula%20pubescens%27&styles=&bbox=239093.000,290000.000,761000.00,679982.000&width=1325&height=994&srs=EPSG:3057&format=image%2Fjpeg',

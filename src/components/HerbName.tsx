@@ -15,14 +15,14 @@ const HerbName = () => {
 
     if (herb) {
         return (
-            <div>
+            <div className="page">
                 <div className="space-around middle-high-div">
                     {values.map((lang: Language) => (
                         <div>{herb.names[lang]}</div>
                     ))}
                 </div>
-                <div className="space-around">
-                    <div className="one-third box">
+                <div className="space-around high-div">
+                    <div>
                         {herb.medicalUses.map((use: string) => (
                             <HashLink
                                 to={"/symptom/#" + deleteSpace(use)}
@@ -32,23 +32,18 @@ const HerbName = () => {
                             </HashLink>)
                         )}
                     </div>
-                    <div className="one-third">
+                    <div>
                         <img className="herb-img" src={herb.imageHerb} alt={herb.names[Language.english]}/>
 
                     </div>
-                    <div className="one-third box">
+                    <div>
                         {herb.precautions.map((precaution: string) => (
-                            <HashLink
-                                to={"/symptom/#" + deleteSpace(precaution)}
-                                scroll={(el) => el.scrollIntoView({behavior: 'auto', block: 'end'})}
-                            >
-                                <h5>{precaution}</h5>
-                            </HashLink>)
+                            <h5>{precaution}</h5>)
                         )}
                     </div>
 
                 </div>
-                <div className="space-around">
+                <div className="space-around middle-high-div">
                     <h3>Vegetation information</h3>
                 </div>
                 <div className="space-around">
@@ -59,7 +54,9 @@ const HerbName = () => {
 
         )
     } else {
-        return <h4>Herb with this id doesn't exist in the data base yet.</h4>
+        return (<div className="page">
+                     <h4>Herb with this id doesn't exist in the data base yet.</h4>
+                 </div>)
     }
 }
 export default HerbName;

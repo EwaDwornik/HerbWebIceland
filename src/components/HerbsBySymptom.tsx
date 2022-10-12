@@ -34,18 +34,20 @@ function HerbsBySymptom() {
         }
 
         symptomsCard.push(
-            <div className={activeClassName} id={'#' + deleteSpace(use)}>
-                <div className="card-header symptom-header">
-                    <h5>{use}</h5>
+            <div id={'#' + deleteSpace(use)}>
+                <div className={"symptom-card" + activeClassName}>
+                    <div>
+                        <h5>{use}</h5>
+                    </div>
+                    <div>
+                        {herbsWithSymptom.map((i) => (
+                                <Link to={"/herb/" + i.id}>
+                                    <p>{i.names[Language.english]}</p>
+                                </Link>
+                            )
+                        )}
+                    </div>
                 </div>
-                <ul className="list-group list-group-flush ">
-                    {herbsWithSymptom.map((i) => (
-                            <Link to={"/herb/" + i.id}>
-                                <li className="list-group-item border-0">{i.names[Language.english]}</li>
-                            </Link>
-                        )
-                    )}
-                </ul>
             </div>
         )
     })
@@ -61,7 +63,7 @@ function HerbsBySymptom() {
                     Pellentesque elit uillamcorper dignissim cras tincidunt lobortis feugiat. At tempor commodo
                     ullamcorper a lacus vestibulum sed arcu non.</p>
             </div>
-            <div className="space-around">
+            <div className="space-around ">
                 {symptomsCard}
             </div>
         </div>

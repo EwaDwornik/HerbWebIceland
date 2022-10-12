@@ -1,39 +1,41 @@
 /* overall changes */
 body {
     font-family: 'Questrial', sans-serif;
-    background-color: #ffffff;
+    background-color: whitesmoke;
     text-align: center;
     color: #466803;
+    padding-right: 5%;
+
 }
 
 a {
     text-decoration: none;
     color: #466803 !important;
+    transition-property: background-color;
+    transition-duration: 0.5s;
 }
 
 a:hover {
-    text-decoration: none;
     color: #0F3325 !important;
-}
+    font-size: 105%;
 
-a:link:hover {
-    color: #0F3325 !important;
 }
 
 .btn {
-    background-color: #ffffff;
+    background-color: whitesmoke;
     border-color: #466803;
     color: #0F3325;
+    transition: background-color 1s linear ;
 }
 
 .btn:hover, .button:hover {
     background-color: #466803;
-    color: #ffffff !important;
+    color: whitesmoke !important;
     border-color: #466803;
 }
 
 .high-div {
-    min-height: 300px;
+   padding: 50px;
 }
 
 .middle-high-div {
@@ -48,43 +50,61 @@ a:link:hover {
 }
 
 .center-element p {
-    max-width: 750px;
+    max-width: 50%;
 }
 
 /* Navigation */
 .navigation {
-    display: flex;
+    position: fixed;
+    z-index: 5;
+    right: -12%;
+    width: 15%;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-gap: 5%;
     justify-content: space-between;
-    flex-wrap: wrap;
-    height: 100px;
+    height: 100%;
     align-items: center;
-    border-bottom: black solid 1px;
     font-size: 110%;
+    background-color: whitesmoke;
+    transition: right 0.5s linear;
+    padding: 1%;
 }
 
-.navigation div a {
-    margin: 15px;
+.navigation-links {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
+
+.navigation:hover {
+    right:0;
+}
+
+.arrow {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-top: 2px solid #0F3325;
+    border-right: 2px solid #0F3325;
+    transform: rotate(-135deg);
+    margin: 2%;
+}
+
 
 .space-around {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
-    margin: 20px;
+    margin: 1%;
 }
 
 .herb-img, .vegetation-img {
-    height: 300px;
+    max-height: 300px;
 }
 
-.box {
-    border-radius: 90px;
-    background-color: #d4e09b;
-    padding: 50px;
-    min-width: 280px;
-    max-width: 60%;
-}
 
 /* Workshop & Articles*/
 .workshop-card, .article-card {
@@ -92,56 +112,85 @@ a:link:hover {
     display: grid;
     grid-template-columns: 25% auto;
     grid-gap: 5%;
-    margin: 25px;
+    margin: 10%;
 }
 
 .long-description-article {
     border: none;
+    background-color: whitesmoke;
 }
 
 .add-workshop {
-    margin-top: 50px;
+    margin-top: 10%;
     display: flex;
     justify-content: center;
+}
+.form-workshop {
+    background-color: whitesmoke;
+    border: none;
 }
 
 /* HerbsByName */
 
-.card-names-custom {
-    width: 200px;
-    height: 270px;
-    margin: 20px;
+.background-img {
+    background-image: url("../../src/components/static/Clement-landscape-1.jpg");
+    width: 100%;
+    height: 100%;
 }
 
-.card-names-custom img {
-    height: 150px;
-    object-fit: scale-down;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.welcome {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    }
+
+.welcome h4 {
+    margin-left: 2%;
 }
 
-.card-footer {
+
+.herb-card {
     width: 200px;
-    background-color: #d4e09b;
+    height: 250px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    box-shadow: 5px 5px 5px 5px lightgray;
+    margin: 5%;
+;
 }
+
+.herb-card img {
+    max-height: 120px;
+}
+
+.herb-card:hover {
+    box-shadow: 10px 5px 5px 5px lightgray;
+}
+
 
 /* HerbsBySymptom */
 
+
 .symptom-card {
-    width: 20%;
-    padding: 0;
+    width: 200px;
+    display: grid;
+    align-items: center;
+    box-shadow: 5px 5px 5px 5px lightgray;
+    border: 0.5px lightgray solid;
+    border-radius: 15px;
+    padding: 5%;
 }
 
-.symptom-header {
-    background-color: #d4e09b;
+.symptom-card div:first-child{
+    border-bottom:  1px solid lightgray;
 }
 
 .activated {
-    border-color: deeppink;
-    border: solid 2px;
-    color: deeppink;
-}
+    box-shadow: 10px 5px 10px 10px darkgray;
+
+    }
 
 /* other */
 

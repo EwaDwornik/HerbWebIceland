@@ -4,7 +4,7 @@ import React from 'react';
 function Contact() {
 
     return (
-        <div className="center-element">
+        <div className="center-element page">
             <div className="center-element high-div">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut
@@ -16,7 +16,7 @@ function Contact() {
                     ullamcorper a lacus vestibulum sed arcu non.</p>
             </div>
 
-            <div className="box center-element">
+            <div className="center-element">
                 <form>
                     <div className="row">
                         <div className="col-lg-6">

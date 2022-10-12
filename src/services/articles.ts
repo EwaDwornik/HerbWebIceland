@@ -29,7 +29,7 @@ export const artcileDB: Article[] = [
         id: generateIdArticle(),
         title: 'Cleaning the roots',
         imageArtilces: Ewablom,
-        shortDescription: 'What to do next after picking the roots. ',
+        shortDescription: 'What to do next after picking the roots. It might look complicate, but with a little bit of knwledge you can do it yourself! ',
         longDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt\n' +
             '                    ut\n' +
             '                    labore et dolore magna aliqua. Lectus vestibulum mattis ullamcorper velit sed ullamcorper.\n' +

@@ -16,7 +16,7 @@ function Articles() {
     );
 
     return (
-        <div>
+        <div className="page">
             <div className="center-element high-div">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut
@@ -43,23 +43,27 @@ function Articles() {
             <div>
                 {results.map((article) =>
                     <div>
-                        <div className="center-element">
+                        <div>
                             <div className="article-card">
                                 <div className="article-img">
                                     <img src={article.imageArtilces} className="img-fluid rounded-start"
                                          alt={article.imageArtilces}/>
                                 </div>
                                 <div >
-                                    <h5>{article.title}</h5>
-                                    <p>{article.shortDescription}</p>
+                                    <div>
+                                        <h5>{article.title}</h5>
+                                        <p>{article.shortDescription}</p>
+                                    </div>
                                     <div className="collapse " id={"article" + article.id}>
                                         <div className="card card-body long-description-article">
                                             {article.longDescription}
                                         </div>
                                     </div>
+
+
                                     <Link to={"#article" + article.id} className="btn btn-article"
-                                       data-bs-toggle="collapse"
-                                       role="button" aria-expanded="false" aria-controls={"article" + article.id}>
+                                          data-bs-toggle="collapse"
+                                          role="button" aria-expanded="false" aria-controls={"article" + article.id}>
                                         <span className="collapsed">
                                             Show more
                                         </span>

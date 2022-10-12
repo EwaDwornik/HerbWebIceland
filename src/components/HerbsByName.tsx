@@ -34,9 +34,12 @@ function HerbsByName() {
     );
 
     return (<div>
+            <div className="background-img welcome">
+                <h4>You might think that Icelandic flora is poor...</h4><br/>
+            </div>
             <div className="center-element high-div">
-                <p><h4>You might think that Icelandic flora is poor</h4>
-                    and you might be right. <br/> <br/>
+                <p>
+                    <h5>...and you might be right</h5>
                     But! Between the lava fields and glaciers you can find plenty of medical herbs, at least 85,
                     that can help you to improve your life.
                     Tough climate made them very potent, few leaves taken from birch won’t harm the tree, but their
@@ -46,12 +49,13 @@ function HerbsByName() {
                     help you find the ones for your current needs. Enjoy!
                 </p>
             </div>
-            <div className="center-element">
+
+            <div className="center-element search-herb">
                 <div className="space-around">
                     <select
                         className="form-select searching-child"
                         onChange={(e: any) => sortStateBy(e.target.value)}>
-                        <option selected>Choose language to sort herbs</option>
+                        <option selected>sort by language</option>
                         <option value="icelandic">Icelandic</option>
                         <option value="english">English</option>
                     </select>
@@ -68,22 +72,21 @@ function HerbsByName() {
             </div>
             <div className="space-around">
                 {results.map((single) =>
-                    <div className="col">
-                        <Link to={"/herb/" + single.id}>
-                            <div className="card card-names-custom">
-                                <div className="card-body">
-                                    <img className="card-img-top"
-                                         src={single.imageHerb}
-                                         alt={single.names[Language.english]}
-                                    />
-                                </div>
-                                <div className="card-footer footer-by-name">
-                                    <h5 className="card-title">{single.names[sortedBy]} </h5>
-                                    <p className="card-text">{single.names[Language.latin]}</p>
-                                </div>
+                    <Link to={"/herb/" + single.id}>
+                        <div className="herb-card">
+                            <div>
+                                <img
+                                    src={single.imageHerb}
+                                    alt={single.names[Language.english]}
+                                />
                             </div>
-                        </Link>
-                    </div>
+                            <div>
+                                <h5 className="card-title">{single.names[sortedBy]} </h5>
+                                <p className="card-text">{single.names[Language.latin]}</p>
+                            </div>
+
+                        </div>
+                    </Link>
                 )}
             </div>
 
