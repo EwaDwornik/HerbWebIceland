@@ -5,6 +5,7 @@ import {getAllWorkshops} from "../services/workshops";
 import WorkshopForm from "./WorkshopForm";
 import {Workshop} from "../model";
 import {Link} from "react-router-dom";
+import workshop from "../components/static/workshop.png"
 
 //list of all herbal workshops that happen in Iceland.
 
@@ -18,7 +19,7 @@ function Workshops() {
 
     return (
         <div className="page">
-            <div className="center-element high-div">
+            <div className="workshop-box">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut
                     labore et dolore magna aliqua. Lectus vestibulum mattis ullamcorper velit sed ullamcorper.
@@ -26,20 +27,20 @@ function Workshops() {
                     nibh mauris cursus mattis. Amet est placerat in egestas erat. Tristique senectus et netus et
                     malesuada fames ac. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien.
                     Pellentesque elit uillamcorper dignissim cras tincidunt lobortis feugiat. At tempor commodo
-                    ullamcorper a lacus vestibulum sed arcu non.</p>
-            </div>
-            <div className="middle-high-div">
-                <Link to="#collapseWorkshop" className="btn" data-bs-toggle="collapse" role="button"
-                   aria-expanded="false" aria-controls="collapseWorkshop">add workshop</Link>
+                    ullamcorper a lacus vestibulum sed arcu non.
+                </p>
+                <img src={workshop} alt="workshop"/>
             </div>
 
+            <Link to="#collapseWorkshop" className="btn" data-bs-toggle="collapse" role="button"
+                  aria-expanded="false" aria-controls="collapseWorkshop">add workshop</Link>
             <div className="collapse middle-high-div" id="collapseWorkshop">
                 <div className="card form-workshop card-body">
                     <WorkshopForm addWorkshop={addWorkshop}/>
                 </div>
             </div>
 
-            <div className="space-around">
+            <div>
                 {getAllWorkshops().map((workshop) =>
                     <div className="workshop-card">
                         <div className="workshop-img">

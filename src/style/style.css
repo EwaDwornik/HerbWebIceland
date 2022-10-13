@@ -38,9 +38,6 @@ a:hover {
    padding: 50px;
 }
 
-.middle-high-div {
-    min-height: 120px;
-}
 
 .center-element {
     display: flex;
@@ -173,13 +170,28 @@ a:hover {
 /* HerbsBySymptom */
 
 
+.symptom-box, .contact-box, .workshop-box, .article-box, .herb-name-box {
+    display: flex;
+    background-color: lightgray;
+    padding: 5%;
+    margin: 5%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.symptom-box p, .workshop-box p, .article-box p {
+    width: 40%
+}
+
+.symptom-box img, .workshop-box img, .article-box input {
+    width: 50%;
+}
 .symptom-card {
     width: 200px;
     display: grid;
     align-items: center;
     box-shadow: 5px 5px 5px 5px lightgray;
     border: 0.5px lightgray solid;
-    border-radius: 15px;
     padding: 5%;
 }
 
@@ -191,6 +203,14 @@ a:hover {
     box-shadow: 10px 5px 10px 10px darkgray;
 
     }
+
+.contact-box form {
+    width: 200%;
+}
+
+.contact-box p{
+    width: 60%
+}
 
 /* other */
 
