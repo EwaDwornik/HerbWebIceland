@@ -43,10 +43,10 @@ function Workshops() {
             <div>
                 {getAllWorkshops().map((workshop) =>
                     <div className="workshop-card">
-                        <div className="workshop-img">
-                            <img src={workshop.imageWorkshop} className="img-fluid rounded-start"
-                                 alt={workshop.imageWorkshop}/>
-                        </div>
+
+                        <img src={workshop.imageWorkshop} className="img-fluid rounded-start"
+                             alt={workshop.imageWorkshop}/>
+
                         <div className="workshop-description">
                             <h5 className="card-title">{workshop.title}</h5>
                             <h5 className="card-title">{workshop.date}</h5>

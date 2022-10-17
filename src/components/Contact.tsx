@@ -5,7 +5,7 @@ function Contact() {
 
     return (
         <div className="contact-box">
-            <div className="">
+            <div className="center-element">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     ut
                     labore et dolore magna aliqua. Lectus vestibulum mattis ullamcorper velit sed ullamcorper.
@@ -16,64 +16,64 @@ function Contact() {
                     ullamcorper a lacus vestibulum sed arcu non.</p>
             </div>
 
-
-                <form>
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <div className="form-group mt-3">
-                                <label className="contact-lable">First Name</label>
-                                <input name="name" id="name" className="form-control" type="text"/>
-                            </div>
-                        </div>
-
-                        <div className="col-lg-6">
-                            <div className="form-group mt-3">
-                                <label className="contact-lable">Last Name</label>
-                                <input name="name" id="lastname" className="form-control"
-                                       type="text"/>
-                            </div>
+            <form>
+                <div className="row">
+                    <div className="col-lg-6">
+                        <div className="form-group mt-3">
+                            <label className="contact-lable">First Name</label>
+                            <input name="name" id="name" className="form-control" type="text"/>
                         </div>
                     </div>
 
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="form-group mt-3">
-                                <label className="contact-lable">Email Address</label>
-                                <input name="email" id="email" className="form-control" type="text"/>
-                            </div>
+                    <div className="col-lg-6">
+                        <div className="form-group mt-3">
+                            <label className="contact-lable">Last Name</label>
+                            <input name="name" id="lastname" className="form-control"
+                                   type="text"/>
                         </div>
                     </div>
+                </div>
 
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="form-group mt-3">
-                                <label className="contact-lable">Subject</label>
-                                <input name="subject" id="subject" className="form-control"
-                                       type="text"/>
-                            </div>
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="form-group mt-3">
+                            <label className="contact-lable">Email Address</label>
+                            <input name="email" id="email" className="form-control" type="text"/>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="form-group mt-3">
-                                <label className="contact-lable">Your Message</label>
-                                <textarea name="comments" id="comments"
-                                          className="form-control"></textarea>
-                            </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="form-group mt-3">
+                            <label className="contact-lable">Subject</label>
+                            <input name="subject" id="subject" className="form-control"
+                                   type="text"/>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-lg-12 mt-3 text-right">
-                            <input id="submit" name="send"
-                                   className="btn"
-                                   value="Send Message" type="submit"/>
-                            <div id="simple-msg"></div>
+                </div>
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="form-group mt-3">
+                            <label className="contact-lable">Your Message</label>
+                            <textarea name="comments" id="comments"
+                                      className="form-control"></textarea>
                         </div>
                     </div>
-                </form>
+                </div>
+                <div className="row">
+                    <div className="col-lg-12 mt-3 text-right">
+                        <input id="submit" name="send"
+                               className="btn"
+                               value="Send Message" type="submit"/>
+                        <div id="simple-msg"></div>
+                    </div>
+                </div>
+            </form>
         </div>
     );
 }
+
 export default Contact;
 
 

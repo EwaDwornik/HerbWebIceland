@@ -52,14 +52,14 @@ a:hover {
 
 /* Navigation */
 .navigation {
-    position: fixed;
+    position: absolute;
     z-index: 5;
     right: -12%;
     width: 15%;
     display: grid;
     grid-template-columns: 2fr 2fr;
     grid-gap: 5%;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 100%;
     align-items: center;
     font-size: 110%;
@@ -131,6 +131,7 @@ a:hover {
 
 .background-img {
     background-image: url("../../src/components/static/Clement-landscape-1.jpg");
+    background-repeat: no-repeat;
     width: 100%;
     height: 100%;
 }
@@ -218,3 +219,32 @@ a:hover {
 [aria-expanded="true"] > .collapsed {
     display: none;
 }
+
+@media only screen and (max-width: 700px){
+    .symptom-box, .contact-box, .workshop-box, .article-box, .herb-name-box {
+        flex-direction: column;
+    }
+    .symptom-box p, .workshop-box p, .article-box p {
+        width: 90%
+    }
+    .symptom-box img, .workshop-box img, .article-box input {
+        width: 90%;
+    }
+    .center-element p {
+        max-width: 100%;
+    }
+    .contact-box form{
+        width: 90%;
+    }
+    .workshop-card, .article-card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navigation {
+        right: -50%;
+        width: 55%;
+        grid-template-columns: 1fr 2fr;
+          }
+}
+
