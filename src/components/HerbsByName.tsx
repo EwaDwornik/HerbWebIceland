@@ -35,7 +35,7 @@ function HerbsByName() {
 
     return (<div>
             <div className="background-img welcome">
-                <h4>You might think that Icelandic flora is poor...</h4><br/>
+                <h5>You might think that Icelandic flora is poor...</h5>
             </div>
             <div className="center-element high-div">
                 <p>
