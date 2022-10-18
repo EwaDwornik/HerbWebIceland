@@ -1,8 +1,8 @@
 /* overall changes */
-html {
+:root {
     --dark-green: #466803;
     --super-dark-green: #0F3325;
-    --maincolor: whitesmoke;
+    --maincolor: white;
     --shadow-color: lightgray;
 }
 
@@ -12,7 +12,6 @@ body {
     text-align: center;
     color: var(--dark-green);
     padding-right: 5%;
-
 }
 
 a {
@@ -25,20 +24,18 @@ a {
 a:hover {
     color: var(--super-dark-green);
     font-size: 105%;
-
 }
 
 .btn {
     background-color: var(--maincolor);
     color: var(--dark-green);
-    color: var(--super-dark-green);
+    border: var(--super-dark-green) solid 0.5px;
     transition: background-color 1s linear ;
 }
 
 .btn:hover, .button:hover {
-    color: var(--dark-green);
     color: var(--maincolor);
-    color: var(--dark-green);
+    background-color: var(--dark-green);
 }
 
 .high-div {
@@ -63,7 +60,7 @@ a:hover {
     right: -12%;
     width: 15%;
     display: grid;
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 1fr 2fr;
     grid-gap: 5%;
     justify-content: space-around;
     height: 100%;
@@ -72,6 +69,7 @@ a:hover {
     background-color: var(--maincolor);
     transition: right 0.5s linear;
     padding: 1%;
+    margin-top: -5%;
 }
 
 .navigation-links {
@@ -109,16 +107,19 @@ a:hover {
 }
 
 
-/* Workshop & Articles*/
 .workshop-card, .article-card {
     max-width: 80%;
     display: grid;
-    grid-template-columns: 25% auto;
+    align-items: center;
+    grid-template-columns: 50% auto;
     grid-gap: 5%;
     margin: 10%;
 }
 
 .long-description-article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     background-color: var(--maincolor);
 }
@@ -149,8 +150,8 @@ a:hover {
     align-items: start;
     justify-content: center;
     padding-top: 5%;
+    margin: 5%;
     }
-
 
 
 
@@ -256,3 +257,8 @@ a:hover {
           }
 }
 
+@media print {
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+    }
+}
