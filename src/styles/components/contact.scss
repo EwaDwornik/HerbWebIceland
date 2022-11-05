@@ -1,0 +1,33 @@
+// more in global.scss
+
+.contact-background {
+  @include parallax-background("../../components/static/Mads-Thomsen.jpg");
+  height: 100%;
+  display: flex;
+  background-color: lightgray;
+  padding: 15%;
+  justify-content: center;
+}
+
+
+.contact-box {
+  display: flex;
+  background-color: lightgray;
+  padding: 5%;
+  justify-content: space-around;
+  div {
+    width: 50%;
+  }
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+
+  div input, textarea, span, button {
+    width: 300px;
+    border: none;
+  }
+
+}
+

@@ -1,0 +1,264 @@
+@import "variables/variables";
+@import "components/articles";
+@import "components/contact";
+@import "components/home";
+@import "components/navigation";
+@import "components/symptom";
+@import "components/workshop";
+@import "components/herb[id].scss";
+
+
+/* overall changes */
+
+body {
+  font-family: 'Comfortaa', cursive;
+  background-color: $maincolor;
+  text-align: center;
+  color: $dark-green;
+  font-size: 1vw;
+  h5 {
+    font-size: 1.5vw;
+  }
+}
+
+a, Link {
+  text-decoration: none;
+  color: $dark-green;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+a:hover {
+  color: $super-dark-green;
+  font-size: 105%;
+}
+
+button {
+  background-color: $maincolor;
+  color: $dark-green;
+  border: $super-dark-green solid 0.5px;
+  transition: background-color 1s linear;
+  margin-top: 5%;
+  padding: 2%;
+  border-radius: 7px;
+}
+
+button:hover {
+  color: $maincolor;
+  background-color: $dark-green;
+}
+
+:focus {
+  outline: none;
+}
+
+input, select, textarea {
+  color: $super-dark-green;
+  padding: 2%;
+  border-radius: 7px 7px 0 0;
+}
+
+select {
+  min-width: 200px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.pos-relative {
+  position: relative;
+  display: grid;
+  align-content: start;
+}
+
+.effect-green {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.effect-green ~ .focus-border, .effect-green-longer ~ .focus-border{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: $light-green;
+  transition: 0.4s;
+ }
+
+.effect-green:focus ~ .focus-border {
+  width: 100%;
+  transition: 0.4s;
+}
+
+.effect-green-longer:focus ~ .focus-border {
+  width: 200%;
+  transition: 0.4s;
+}
+
+
+img {
+  border-radius: 7px;
+}
+
+.credits {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: right;
+  padding-right: 5%;
+  font-size: 1vw;
+  a {
+    text-decoration: none;
+    color: $maincolor;
+  }
+}
+
+::placeholder, label {
+  padding: 5px;
+}
+
+
+// common formatting
+
+.center-element {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.space-around {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 1%;
+}
+
+
+.symptom-box, .workshop-box, .article-box, .herb-name-box {
+  display: flex;
+  background-color: $shadow-color;
+  padding: 2%;
+  margin: 5%;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 7px;
+  div {
+    max-width: 50%;
+    margin: 2%;
+  }
+  img{
+    max-width: 80%;
+
+  }
+
+}
+
+ .workshop-box p, .article-box p {
+  width: 40%
+}
+
+.symptom-box div, .workshop-box div, .article-box {
+  width: 50%;
+}
+
+
+/* animations & other */
+
+.image-wrapper {
+  width: 400px;
+  height: 250px;
+  position: relative;
+  margin: 30vh auto;
+}
+
+.image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  max-width: 400px;
+
+}
+
+.image-1 {
+
+  clip-path: polygon(0 0, 0 32%, 28% 0);
+  transform: translate(-10px, -10px);
+  transition: transform 300ms ease;
+  transform-origin: top;
+  .image-wrapper:hover & {
+    transform: translate(0,0);
+  }
+}
+
+.image-2 {
+  clip-path: polygon(28% 0, 0 32%, 0 100%, 17% 100%, 90% 0);
+  transform: translate(-30px, 5px);
+  transition: transform 300ms ease;
+  .image-wrapper:hover & {
+    transform: translate(0,0);
+  }
+}
+
+.image-3 {
+  clip-path: polygon(100% 0, 100% 65%, 74% 100%, 17% 100%, 90% 0);
+  transform: translate(-15px, -10px);
+  transition: transform 300ms ease;
+  .image-wrapper:hover & {
+    transform: translate(0,0);
+  }
+}
+
+.image-4 {
+  clip-path: polygon(100% 65%, 74% 100%, 100% 100%);
+  transform: translate(-32px, 5px);
+  transition: transform 300ms ease;
+  transform-origin: top;
+  .image-wrapper:hover & {
+    transform: translate(0,0);
+  }
+}
+
+[aria-expanded="false"] > .expanded,
+[aria-expanded="true"] > .collapsed {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+
+  body {
+    font-size: 2vw;
+    h5, h3 {
+      font-size: 2.5vw;
+    }
+     }
+
+  .symptom-box, .contact-box, .workshop-box, .article-box, .herb-name-box, .lightBoxShadow, .vegetation-box, .workshop-description, .workshop-card, .article-card, .workshop-form {
+display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 1%;
+    div, p, img {
+      max-width: 100%;
+      width: 90%;
+      margin: 1%;
+    }
+      }
+}
+
+
+@media print {
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+  }
+}
+
+

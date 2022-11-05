@@ -1,0 +1,34 @@
+.article-background {
+  @include parallax-background("../../components/static/Pixabay.jpg");
+  height: 100%;
+  padding: 15%;
+  display: grid;
+  justify-content: end;
+}
+
+
+.long-description-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: $maincolor;
+}
+
+.article-card {
+  display: flex;
+  background-color: $shadow-color;
+  padding: 5%;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 7px;
+  margin: 5%;
+  div {
+    max-width: 50%;
+    margin: 2%;
+  }
+  img {
+    max-height: 100%
+  }
+
+}

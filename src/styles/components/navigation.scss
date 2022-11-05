@@ -1,0 +1,46 @@
+.navigation {
+  position: fixed;
+  z-index: 5;
+  right: -12%;
+  width: 15%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 5%;
+  justify-content: space-around;
+  height: 100%;
+  align-items: center;
+  font-size: 110%;
+  background-color: $maincolor;
+  transition: right 0.5s linear;
+  padding: 1%;
+}
+
+.navigation-links {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.navigation:hover {
+  right: 0;
+}
+
+.arrow {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid #0F3325;
+  border-right: 2px solid #0F3325;
+  transform: rotate(-135deg);
+  margin: 2%;
+}
+
+@media only screen and (max-width: 700px) {
+
+  .navigation {
+    right: -50%;
+    width: 55%;
+    grid-template-columns: 1fr 2fr;
+  }
+}

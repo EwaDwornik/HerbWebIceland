@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {Link} from 'react-router-dom';
+import arrowup from "../components/static/arrow-up.png"
 
-import '../style/style.css';
 import {Herb, Language} from "../model";
 import {getAllHerbs} from "../services/herbs";
 
@@ -33,44 +33,68 @@ function HerbsByName() {
         (herb.names[Language.icelandic]).toLowerCase().includes(searchTerm)
     );
 
-    return (<div>
-            <div className="background-img welcome">
-                <h5>You might think that Icelandic flora is poor...</h5>
-            </div>
-            <div className="center-element high-div">
-                <p>
-                    <h5>...and you might be right</h5>
-                    But! Between the lava fields and glaciers you can find plenty of medical herbs, at least 85,
-                    that can help you to improve your life.
-                    Tough climate made them very potent, few leaves taken from birch won’t harm the tree, but their
-                    diuretic properties can help you with getting rid of excess water in your body. <br/>Some
-                    things are just good to know and that’s why this website exists. <br/>
-                    We categorised local herbs to
-                    help you find the ones for your current needs. Enjoy!
-                </p>
-            </div>
+    const ref = useRef(null);
 
-            <div className="center-element search-herb">
-                <div className="space-around">
+    const handleClick = () => {
+        // @ts-ignore
+        ref.current?.scrollIntoView({behavior: 'smooth'});
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
+
+    return (<div>
+            <div id="first">
+                <p className="animated bounceInLeft">YOU MIGHT THINK THAT ICELANDIC FLORA IS POOR...</p>
+            </div>
+            <div className="home-page-decription">
+                <p>...and you might be right</p>
+                But! Between the lava fields and glaciers you can find plenty of medical herbs, at least 85,
+                that can help you to improve your life.<br/>
+                Tough climate made them very potent, few leaves taken from birch won’t harm the tree, but their
+                diuretic properties can help you with getting rid of excess water in your body. <br/>Some
+                things are just good to know and that’s why this website exists. <br/>
+                We categorised local herbs to
+                help you find the ones for your current needs. <br/>
+                Enjoy!
+            </div>
+            <div id="first"></div>
+            <div className="high-div home-page-navigation ">
+                <div onClick={handleClick}><Link to="/#herbs-by-name">Herbs by name</Link></div>
+                <div><Link to="/symptom">Herbs by symptom</Link></div>
+                <div><Link to="/contact">Contact</Link></div>
+                <div><Link to="/workshops">Workshops</Link></div>
+                <div><Link to="/articles">Articles</Link></div>
+            </div>
+            <div id="second"></div>
+            <div ref={ref} className="center-element">
+                <div className="space-around pos-relative">
                     <select
-                        className="form-select searching-child"
-                        onChange={(e: any) => sortStateBy(e.target.value)}>
-                        <option selected>sort by language</option>
+                        onChange={(e: any) => sortStateBy(e.target.value)}
+                        className="effect-green">
+                        <option selected> sort by language</option>
                         <option value="icelandic">Icelandic</option>
                         <option value="english">English</option>
                     </select>
                 </div>
-                <div className="center-element">
+
+                <div className="center-element pos-relative">
                     <input
                         type="text"
-                        className="form-control searching-child"
-                        placeholder="Search"
+                        placeholder=" search"
+                        className="effect-green"
                         value={searchTerm}
                         onChange={handleChange}
                     />
+                    <span className="focus-border"></span>
+
                 </div>
             </div>
-            <div className="space-around">
+            <div className="space-around" id='/#herbs-by-name'>
                 {results.map((single) =>
                     <Link to={"/herb/" + single.id}>
                         <div className="herb-card">
@@ -89,7 +113,12 @@ function HerbsByName() {
                     </Link>
                 )}
             </div>
-
+            <div id="second">
+                <Link to="/#first" onClick={scrollToTop}><img src={arrowup}/></Link>
+                <div className="credits">
+                    photos by <Link to="https://clementcoudeyre.com" target="_blank">Clément
+                    Coudeyre</Link></div>
+            </div>
         </div>
 
     )

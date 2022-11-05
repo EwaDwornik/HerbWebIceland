@@ -1,0 +1,64 @@
+
+.workshop-background {
+  @include parallax-background("../../components/static/Clement-landscape-3.jpeg");
+  height: 100%;
+  padding: 15%;
+  justify-content: center;
+}
+
+
+.workshop-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: start;
+  text-align: start;
+  background-color: $shadow-color;
+  padding: 5%;
+  border-radius: 7px;
+  margin: 5%;
+
+  div input, span, button, textarea {
+    width: 25vw;
+    border: none;
+    margin: 2%;
+  }
+
+}
+
+.add-workshop {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-workshop {
+  background-color: $maincolor;
+  border: none;
+}
+
+.workshop-card {
+  display: flex;
+  background-color: $shadow-color;
+  padding: 5%;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 7px;
+  margin: 5%;
+
+  div {
+    max-width: 50%;
+    margin: 2%;
+  }
+
+}
+
+@media only screen and (max-width: 700px) {
+  .workshop-form {
+    div input, span, button, textarea {
+      width: 100%;
+      border: none;
+      margin: 1%;
+    }
+  }
+
+}

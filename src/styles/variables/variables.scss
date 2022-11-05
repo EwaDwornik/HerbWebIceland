@@ -1,0 +1,28 @@
+$light-green: #5ca904;
+$dark-green: #466803;
+$super-dark-green: #0F3325;
+$maincolor: whitesmoke;
+$shadow-color: lightgray;
+$box-shadow: 5px 5px 5px 5px lightgray;
+$box-shadow-hover: 10px 5px 5px 5px lightgray;
+
+
+@mixin parallax-background($file) {
+  background: url($file) no-repeat center center fixed;
+  @include background-size(cover);
+}
+
+@mixin background-size($size) {
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+}
+
+
+$parallax-height: 100vh;
+$center-margin: 0px auto;
+
+$parallax-height: 100vh;
+$center-margin: 0px auto;
+$theme: #2e3738;

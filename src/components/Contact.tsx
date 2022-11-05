@@ -1,80 +1,107 @@
 import React from 'react';
+import {Formik, Field, Form, FormikHelpers} from "formik";
+import * as Yup from 'yup';
+import {ContactValues} from "../model";
+import {Link} from "react-router-dom";
+import Navigation from "./Navigation";
+
+
+const ContactSchema = Yup.object().shape({
+    name: Yup.string()
+        .min(2, 'Too short')
+        .max(50, 'Too long')
+        .required('Required'),
+    email: Yup.string().email('Invalid email').required('Required'),
+    subject: Yup.string().min(10, 'Too short').required('Required'),
+    message: Yup.string().min(20, 'Too short').required('Required'),
+});
 
 // Simple contact page.
 function Contact() {
 
     return (
-        <div className="contact-box">
-            <div className="center-element">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                    ut
-                    labore et dolore magna aliqua. Lectus vestibulum mattis ullamcorper velit sed ullamcorper.
-                    In
-                    nibh mauris cursus mattis. Amet est placerat in egestas erat. Tristique senectus et netus et
-                    malesuada fames ac. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien.
-                    Pellentesque elit uillamcorper dignissim cras tincidunt lobortis feugiat. At tempor commodo
-                    ullamcorper a lacus vestibulum sed arcu non.</p>
+        <>
+            <Navigation/>
+            <div className="contact-background">
+                <div className="contact-box animated bounceInLeft">
+                    <div className="center-element">
+                        <h1>Contact us if you want to cooperate!</h1>
+                    </div>
+                    <Formik
+                        initialValues={{
+                            name: '',
+                            email: '',
+                            subject: '',
+                            message: ''
+                        }}
+                        validationSchema={ContactSchema}
+                        onSubmit={(
+                            values: ContactValues,
+                            {setSubmitting}: FormikHelpers<ContactValues>
+                        ) => {
+                            setTimeout(() => {
+                                alert(JSON.stringify(values, null, 2));
+                                setSubmitting(false);
+                            }, 500);
+                        }}
+                    >
+                        {({errors, touched}) => (
+                            <Form className="contactForm ">
+                                <div className="pos-relative">
+                                    <label htmlFor="Name">name</label>
+                                    <Field className="effect-green-longer" name="name" placeholder="Ewok"/>
+                                    <span className="focus-border"></span>
+                                    {errors.name ? (
+                                        <div>{errors.name}</div>
+                                    ) : null}
+                                </div>
+                                <div className="pos-relative">
+                                    <label htmlFor="email">e-mail</label>
+                                    <Field
+                                        className="effect-green-longergreen"
+                                        name="email"
+                                        placeholder="ewok@sw.com"
+                                        type="email"
+                                    />
+                                    <span className="focus-border"></span>
+                                    {errors.email && touched.email ? <div>{errors.email}</div> : null}
+                                </div>
+                                <div className="pos-relative">
+                                    <label htmlFor="subject">subject</label>
+                                    <Field className="effect-green-longer" name="subject" placeholder="subject"/>
+                                    {errors.subject ? (
+                                        <div>{errors.subject}</div>
+                                    ) : null}
+                                    <span className="focus-border"></span>
+                                </div>
+                                <div className="pos-relative">
+                                    <label htmlFor="message">message</label>
+                                    <Field className="effect-green-longer" component='textarea' row={7} id="message"
+                                           name="message"
+                                           placeholder="message"/>
+                                    <span className="focus-border"></span>
+                                    {errors.message ? (
+                                        <div>{errors.message}</div>
+                                    ) : null}
+
+                                </div>
+                                <button type="submit">Submit</button>
+                            </Form>
+                        )}
+                    </Formik>
+                </div>
+
+                <div className="credits">
+                    photo by <Link to="https://www.pexels.com/@madsdonald/" target="_blank">Mads Thomsen</Link>
+                </div>
             </div>
+        </>
 
-            <form>
-                <div className="row">
-                    <div className="col-lg-6">
-                        <div className="form-group mt-3">
-                            <label className="contact-lable">First Name</label>
-                            <input name="name" id="name" className="form-control" type="text"/>
-                        </div>
-                    </div>
-
-                    <div className="col-lg-6">
-                        <div className="form-group mt-3">
-                            <label className="contact-lable">Last Name</label>
-                            <input name="name" id="lastname" className="form-control"
-                                   type="text"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="row">
-                    <div className="col-lg-12">
-                        <div className="form-group mt-3">
-                            <label className="contact-lable">Email Address</label>
-                            <input name="email" id="email" className="form-control" type="text"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="row">
-                    <div className="col-lg-12">
-                        <div className="form-group mt-3">
-                            <label className="contact-lable">Subject</label>
-                            <input name="subject" id="subject" className="form-control"
-                                   type="text"/>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-lg-12">
-                        <div className="form-group mt-3">
-                            <label className="contact-lable">Your Message</label>
-                            <textarea name="comments" id="comments"
-                                      className="form-control"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-lg-12 mt-3 text-right">
-                        <input id="submit" name="send"
-                               className="btn"
-                               value="Send Message" type="submit"/>
-                        <div id="simple-msg"></div>
-                    </div>
-                </div>
-            </form>
-        </div>
     );
 }
 
 export default Contact;
+
 
 
 

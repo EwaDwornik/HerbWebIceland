@@ -1,7 +1,7 @@
 import {Article} from "../model";
 import {generateIdArticle} from "./utilities";
-import Ewablom from '../components/static/Ewablóm.jpeg';
-import infusion from '../components/static/infusion.png';
+import Ewablom from '../components/static/ewablóm.jpeg';
+import infusion from '../components/static/name.png';
 
 export const artcileDB: Article[] = [
     {

@@ -1,0 +1,24 @@
+
+.symptom-box-search {
+  display: grid;
+  justify-items: center;}
+
+.symptom-card {
+  width: 200px;
+  display: grid;
+  align-items: center;
+  box-shadow: $box-shadow;
+  border: 0.5px lightgray solid;
+  padding: 5%;
+  transition: transform 1s ease;
+  border-radius: 7px;
+
+  div:first-child {
+    border-bottom: 1px solid lightgray;
+  }
+}
+
+.activated {
+  box-shadow: $box-shadow-hover;
+  color: hotpink;
+}

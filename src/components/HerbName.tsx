@@ -1,11 +1,9 @@
 import React from "react";
-import {useParams} from "react-router-dom";
-
-import '../style/style.css';
+import {Link, useParams} from "react-router-dom";
 import {Language} from "../model";
 import {deleteSpace} from "../services/utilities";
 import {getAllHerbs} from "../services/herbs";
-import {HashLink} from "react-router-hash-link";
+import Navigation from "./Navigation";
 
 // Page about a herb, user can read about it, see where it grows abd when to use it.
 const HerbName = () => {
@@ -16,34 +14,43 @@ const HerbName = () => {
     if (herb) {
         return (
             <div>
+                <Navigation/>
                 <div className="space-around">
                     {values.map((lang: Language) => (
-                        <div>{herb.names[lang]}</div>
-                    ))}</div>
-                <div className="herb-name-box">
-                    <div>
-                        {herb.medicalUses.map((use: string) => (
-                            <HashLink
-                                to={"/symptom/#" + deleteSpace(use)}
-                                scroll={(el) => el.scrollIntoView({behavior: 'auto', block: 'end'})}
-                            >
-                                <h5>{use}</h5>
-                            </HashLink>)
-                        )}
-                    </div>
-                    <img className="herb-img" src={herb.imageHerb} alt={herb.names[Language.english]}/>
-                    <div>
-                        {herb.precautions.map((precaution: string) => (
-                            <h5>{precaution}</h5>)
-                        )}
+                        <div key={herb.id}>{herb.names[lang]}</div>
+                    ))}
+                </div>
+
+                <div className="herb-background animated bounceInLeft">
+                    <div className="lightBoxShadow">
+                        <div className="circleBox">
+                            <img src={herb.imageHerb} alt={herb.names[Language.english]}/>
+                        </div>
+                        <div>
+                            <p><h3>Medical uses:</h3></p>
+                            {herb.medicalUses.map((use: string) => (
+                                <Link key={deleteSpace(use)}
+                                      to={"/symptom?searchedSymptom=" + deleteSpace(use)}
+                                     >
+                                    <a><p>{use}</p></a>
+                                </Link>)
+                            )}
+                        </div>
+                        <div>
+                            <p><h3>Precautions:</h3></p>
+
+                            {herb.precautions.map((precaution: string) => (
+                                <p key={herb.id}>{precaution}</p>)
+                            )}
+                        </div>
                     </div>
                 </div>
-                <div className="space-around ">
-                    <h3>Vegetation information</h3>
-                </div>
-                <div className="herb-name-box">
+                <div className="vegetation-box">
                     <div>{herb.vegetation}</div>
                     <img className="vegetation-img" src={herb.vegetationPhoto} alt={herb.names.english}/>
+                </div>
+                <div className="credits">
+                    photo is taken by <Link to="https://www.pexels.com/@arthousestudio/" target="_blank">ArtHouse Studio</Link>
                 </div>
             </div>
         )

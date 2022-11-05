@@ -1,0 +1,60 @@
+
+.lightBoxShadow {
+  display: flex;
+  padding: 2%;
+  margin: 5%;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 7px;
+}
+
+.lightBoxShadow >  div:not(:first-child){
+  background-color: $maincolor;
+  padding: 2%;
+  margin: 5%;
+  border-radius: 7px;
+  width: 40%
+}
+
+.circleBox {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 50%;
+  background-color: $maincolor;
+  max-width: 30%;
+  min-width: 400px;
+  padding: 5%;
+  img {
+    max-height: 300px;
+  }
+}
+
+
+.herb-background {
+  @include parallax-background("../../components/static/ArtHouse-studio.jpg");
+  height: 100%;
+  padding: 5%;
+  justify-content: center;
+}
+
+.herb-name-box {
+  img {
+    max-height: 250px;
+  }
+  div {
+    width: 30%;
+  }
+}
+
+.vegetation-box {
+  display: flex;
+  padding: 2%;
+  margin: 5%;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 7px;
+  img {
+    max-width: 400px;
+  }
+}
