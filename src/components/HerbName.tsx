@@ -20,21 +20,21 @@ const HerbName = () => {
                         <div key={herb.id}>{herb.names[lang]}</div>
                     ))}
                 </div>
-
-                <div className="herb-background animated bounceInLeft">
-                    <div className="lightBoxShadow">
-                        <div className="circleBox">
-                            <img src={herb.imageHerb} alt={herb.names[Language.english]}/>
-                        </div>
+                <div id="herbID"></div>
+                <div className="animated bounceInLeft">
+                    <div className="herbSymptoms">
                         <div>
                             <p><h3>Medical uses:</h3></p>
                             {herb.medicalUses.map((use: string) => (
                                 <Link key={deleteSpace(use)}
                                       to={"/symptom?searchedSymptom=" + deleteSpace(use)}
-                                     >
+                                >
                                     <a><p>{use}</p></a>
                                 </Link>)
                             )}
+                        </div>
+                        <div className="circleBox">
+                            <img src={herb.imageHerb} alt={herb.names[Language.english]} />
                         </div>
                         <div>
                             <p><h3>Precautions:</h3></p>
@@ -45,12 +45,14 @@ const HerbName = () => {
                         </div>
                     </div>
                 </div>
+                <div id="herbID"></div>
                 <div className="vegetation-box">
                     <div>{herb.vegetation}</div>
                     <img className="vegetation-img" src={herb.vegetationPhoto} alt={herb.names.english}/>
                 </div>
                 <div className="credits">
-                    photo is taken by <Link to="https://www.pexels.com/@arthousestudio/" target="_blank">ArtHouse Studio</Link>
+                    photo is taken by <Link to="https://www.pexels.com/@arthousestudio/" target="_blank">ArtHouse
+                    Studio</Link>
                 </div>
             </div>
         )

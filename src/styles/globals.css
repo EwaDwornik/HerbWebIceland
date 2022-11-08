@@ -209,6 +209,22 @@
     grid-template-columns: 1fr 2fr;
   }
 }
+.symptom-box {
+  display: flex;
+  background-color: lightgray;
+  padding: 2%;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 7px;
+}
+.symptom-box div {
+  max-width: 50%;
+  margin: 2%;
+}
+.symptom-box img {
+  max-width: 80%;
+}
+
 .symptom-box-search {
   display: grid;
   justify-items: center;
@@ -292,53 +308,61 @@
     margin: 1%;
   }
 }
-.lightBoxShadow {
+#herbID {
+  background: url("../../components/static/ArtHouse-studio.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  perspective: 1px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform: translateZ(-1px);
   display: flex;
-  padding: 2%;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+}
+#herbID div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: whitesmoke;
+  padding: 1%;
+}
+
+.herbSymptoms {
+  display: flex;
+  position: relative;
+  padding: 1%;
   margin: 5%;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-radius: 7px;
 }
 
-.lightBoxShadow > div:not(:first-child) {
-  background-color: whitesmoke;
+.herbSymptoms > div:not(:nth-child(2n)) {
   padding: 2%;
-  margin: 5%;
   border-radius: 7px;
-  width: 40%;
+  width: 30%;
 }
 
 .circleBox {
   display: flex;
   justify-content: center;
   align-content: center;
+  position: absolute;
   border-radius: 50%;
   background-color: whitesmoke;
-  max-width: 30%;
-  min-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  width: 40vw;
+  height: 40vw;
   padding: 5%;
-}
-.circleBox img {
-  max-height: 300px;
-}
-
-.herb-background {
-  background: url("../../components/static/ArtHouse-studio.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 100%;
-  padding: 5%;
-  justify-content: center;
-}
-
-.herb-name-box img {
-  max-height: 250px;
-}
-.herb-name-box div {
-  width: 30%;
 }
 
 .vegetation-box {
@@ -353,6 +377,28 @@
   max-width: 400px;
 }
 
+@media only screen and (max-width: 700px) {
+  #herbID {
+    height: 250px;
+  }
+  .herbSymptoms {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 1%;
+    font-size: 3vw;
+  }
+  .herbSymptoms h3 {
+    font-size: 4vw;
+  }
+  .circleBox {
+    position: static;
+  }
+}
 /* overall changes */
 body {
   font-family: "Comfortaa", cursive;
@@ -480,7 +526,7 @@ img {
   margin: 1%;
 }
 
-.symptom-box, .workshop-box, .article-box, .herb-name-box {
+.workshop-box, .article-box, .herb-name-box {
   display: flex;
   background-color: lightgray;
   padding: 2%;
@@ -489,11 +535,11 @@ img {
   align-items: center;
   border-radius: 7px;
 }
-.symptom-box div, .workshop-box div, .article-box div, .herb-name-box div {
+.workshop-box div, .article-box div, .herb-name-box div {
   max-width: 50%;
   margin: 2%;
 }
-.symptom-box img, .workshop-box img, .article-box img, .herb-name-box img {
+.workshop-box img, .article-box img, .herb-name-box img {
   max-width: 80%;
 }
 
@@ -566,10 +612,10 @@ img {
 
 @media only screen and (max-width: 700px) {
   body {
-    font-size: 2vw;
+    font-size: 3vw;
   }
-  body h5, body h3 {
-    font-size: 2.5vw;
+  body h5 {
+    font-size: 3.5vw;
   }
   .symptom-box, .contact-box, .workshop-box, .article-box, .herb-name-box, .lightBoxShadow, .vegetation-box, .workshop-description, .workshop-card, .article-card, .workshop-form {
     display: flex;
